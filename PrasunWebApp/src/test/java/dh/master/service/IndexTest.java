@@ -19,6 +19,7 @@ import dh.master.info.service.IndexService;
 public class IndexTest {
 
 	private Document doc;
+	private Nuristani result;
 
 	@Test
 	public void test() throws IOException {
@@ -53,15 +54,5 @@ public class IndexTest {
 //		System.out.println("Das sind die Fußnoten:");
 //		System.out.println(notes.eachText());
 //	}
-	
-	@Test
-	public void testMethod() {
-	Nuristani test= new Nuristani();
-	
-	System.out.println(test.getHeading());
-	test.setText("text");
-	System.out.println(test.heading);
-	System.out.println(test.toString());
-	}
 
 }

@@ -1,26 +1,19 @@
 package dh.master.info.data;
 
-import java.util.List;
+
 
 public class Nuristani {
 
-	public String heading;
-	public String text;
-	public String annotation;
+	String heading;
+	String text;
+	private String annotation;
 
-	public List<String> nuristaniList;
-
-	public String toString() {
-		return "Nuristani [heading=" + heading + ", text=" + text + ", annotation=" + annotation + "]";
+	public Nuristani(String heading, String text) {
+		this.heading = heading;
+		this.text = text;
 	}
 
-	public List<String> getNuristaniList() {
-		return nuristaniList;
-	}
-
-	public void setNuristaniList(List<String> nuristaniList) {
-		this.nuristaniList = nuristaniList;
-	}
+	
 
 	public String getAnnotation() {
 		return annotation;
@@ -44,8 +37,11 @@ public class Nuristani {
 		return text;
 	}
 
-	public void setText(String content) {
-		this.text = content;
+	public void setText(String text) {
+		this.text = text;
 	}
-
+	@Override
+	public String toString() {
+		return "Nuristani [heading=" + heading + ", text=" + text + ", annotation=" + annotation + "]";
+	}
 }

@@ -1,28 +1,32 @@
 package dh.master.info.controller;
 
-import java.io.IOException;
-import java.util.List;
-
-import org.apache.lucene.queryparser.classic.ParseException;
-import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dh.master.info.data.Nuristani;
+import dh.master.info.service.IndexService;
 import dh.master.info.service.SearchService;
 
 
 @Controller
+@ControllerAdvice
 public class IndexController {
 
 	@Autowired
 	SearchService searcher;
+	
+	@Autowired
+	IndexService indexer;
+	
 	
 	
 	@GetMapping("/home")
@@ -45,12 +49,14 @@ public class IndexController {
 
 	
 //	@RequestMapping(value="/bookview/heading{id}", method=RequestMethod.GET)
-	@GetMapping("/bookview")
-	public String prasText1(Model model, Nuristani result) {
-			
+	@RequestMapping(value="/bookview")
+	public String submit(ModelAndView model,BindingResult result, Nuristani nuristani) {
+		 if (result.hasErrors()) {
+	            return "error";
+	        }		
 	
-		model.addAttribute("heading", result.heading);
-		model.addAttribute("text",result.text);
+		model.addObject("heading", nuristani.getHeading());
+		model.addObject("text",nuristani.getText());
 		
 	    return "bookview";
 	}

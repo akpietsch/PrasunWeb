@@ -21,8 +21,8 @@ public class XmlController {
 	        if (result.hasErrors()) {
 	            return "error";
 	        }
-	        model.addAttribute("head", prasun.heading);
-	        model.addAttribute("content", prasun.text);
+	        model.addAttribute("head", prasun.getHeading());
+	        model.addAttribute("content", prasun.getText());
 	 
 	
 	 

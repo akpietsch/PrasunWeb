@@ -15,23 +15,22 @@ public class IndexService {
 
 	private Document doc;
 
-	public Nuristani parseDoc(String path) throws IOException {
-		doc = Jsoup.parse(new File(path), "UTF-8");
-		Nuristani result = new Nuristani();
+	public Nuristani parseDoc(File file, Nuristani result) throws IOException {
+		doc = Jsoup.parse(new File("src/main/resources/static/xml/NuristaniDegener.xml"), "UTF-8");
 
-		for (Element head : doc.select("p[rend=prn_head]")) {
+		for (Element head : doc.select("p[rend='prn_head']")) {
 			Element next = head.nextElementSibling();
 
-			if (next != null && next.is("list[type=orderd]")) {
+			if (next != null && next.is("list[type='orderd']")) {
 				String heading = head.text();
 				String content = next.text();
-
-				result.setHeading(heading);
-				result.setText(content);
+				result = new Nuristani(heading, content);
 
 			}
+
 		}
 		return result;
+
 	}
 
 	public Nuristani parseAnnotation(String annotation, Nuristani result) {
@@ -45,4 +44,7 @@ public class IndexService {
 		return result;
 	}
 
+//	public getTextByID() {
+//		
+//	}
 }
