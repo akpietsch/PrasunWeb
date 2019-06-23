@@ -21,7 +21,8 @@ public class XmlController {
 
 	@Autowired
 	IndexService indexer;
-	   
+	
+
 	 Map<Integer, Nuristani> NuristaniMap= new HashMap<Integer, Nuristani>();
 	
 	    @RequestMapping(value = "/test", method = RequestMethod.GET)
