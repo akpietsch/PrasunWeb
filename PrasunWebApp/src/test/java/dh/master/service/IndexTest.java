@@ -13,13 +13,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
 
-import dh.master.info.data.Nuristani;
+import dh.master.info.data.NuristaniDAO;
 import dh.master.info.service.IndexService;
 
 public class IndexTest {
 
 	private Document doc;
-	private Nuristani result;
+	private NuristaniDAO result;
 
 	@Test
 	public void test() throws IOException {

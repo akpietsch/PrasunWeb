@@ -8,23 +8,27 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Service;
 
-import dh.master.info.data.Nuristani;
+import dh.master.info.data.NuristaniDAO;
 
 @Service
 public class IndexService {
-
+	/**
+	 * 
+	 */
 	private Document doc;
 
-	public Nuristani parseDoc(File file, Nuristani result) throws IOException {
+	public NuristaniDAO parseDoc(File file, NuristaniDAO result) throws IOException {
 		doc = Jsoup.parse(new File("src/main/resources/static/xml/NuristaniDegener.xml"), "UTF-8");
 
 		for (Element head : doc.select("p[rend='prn_head']")) {
-			Element next = head.nextElementSibling();
 
+			Element next = head.nextElementSibling();
 			if (next != null && next.is("list[type='orderd']")) {
 				String heading = head.text();
 				String content = next.text();
-				result = new Nuristani(heading, content);
+
+				result.setHeading(heading);
+				result.setText(content);
 
 			}
 
@@ -33,7 +37,7 @@ public class IndexService {
 
 	}
 
-	public Nuristani parseAnnotation(String annotation, Nuristani result) {
+	public NuristaniDAO parseAnnotation(String annotation, NuristaniDAO result) {
 		for (Element annotationElement : doc.select("p[rend='footnote text']")) {
 			if (annotationElement != null) {
 				annotation = annotationElement.text();
@@ -43,8 +47,10 @@ public class IndexService {
 		}
 		return result;
 	}
+	
+	
+	
+	
+	
 
-//	public getTextByID() {
-//		
-//	}
 }
