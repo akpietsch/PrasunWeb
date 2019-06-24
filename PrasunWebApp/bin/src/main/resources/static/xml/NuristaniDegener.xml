@@ -1,0 +1,385 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title />
+				<author>Budruss Degener</author>
+			</titleStmt>
+			<editionStmt>
+				<edition>
+					<date>2019-06-14</date>
+				</edition>
+			</editionStmt>
+			<publicationStmt>
+				<p>unknown</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p></p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application xml:id="docxtotei" ident="TEI_fromDOCX"
+					version="2.15.0">
+					<label>DOCX to TEI</label>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<revisionDesc>
+			<listChange>
+				<change>
+					<date>2019-06-14T15:46:34Z</date>
+					<name>Anne Pietsch</name>
+				</change>
+			</listChange>
+		</revisionDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<p rend="prn_head">
+				<anchor xml:id="Toc413527232" />
+				<anchor xml:id="Toc413529113" />
+				<anchor xml:id="Toc413566661" />
+				<anchor xml:id="Toc426264288" />
+				Text 1 (Nacherzählung)
+				<note place="foot" xml:id="ftn1" n="1">
+					<p rend="footnote text">
+						<hi style="font-size:8.5pt" xml:space="preserve"> Nach </hi>
+						<hi rend="allcaps" style="font-size:8.5pt">Rosen</hi>
+						<hi style="font-size:8.5pt" xml:space="preserve"> 1915, 55.</hi>
+					</p>
+				</note>
+			</p>
+			<list type="ordered">
+				<item>atig wәrǰimˈī wuṣeligˈa-pa pәzˈogso. </item>
+				<item>wuṣeligˈa agidyˈogo: „ps-wolumˈaso ütˈeš?“ </item>
+				<item>alˈәg wәrǰimˈī kulyˈogo: „ül wolumˈaso“ lyˈego. </item>
+				<item>wuṣeligˈa agidyˈogo: „itˈī obˈüŋya üo ps-oyˈog-laš?“ </item>
+				<item>alәg wәrǰimˈī wuṣeligˈaš atāwˈogo: „unzˈū itˈī obˈüŋya
+					tiliwˈog abˈәg oyog-lˈamo.“ </item>
+				<item>wuṣeligˈa ižˈī-pan wuṣˈū awičˈa šilˈegso. </item>
+				<item>alˈәg wәrǰimˈī agidyˈogo: „әndˈeš ül wolomˈaso, әndˈeš
+					ižˈī-pan psˈele wuṣu wuwučimˈā-ra?” </item>
+				<item>wuṣeligˈa kulyˈogo: „tˈašče ī ižˈīš ščˈöli limˈasmo. </item>
+				<item>üo ižˈī ščˈöli wˈi-ṭkoma tiliwˈog abˈәg psˈele oyomā-rˈe-sċ?“
+				</item>
+			</list>
+			<p rend="prn_head">
+				<anchor xml:id="Toc413527233" />
+				<anchor xml:id="Toc413529114" />
+				<anchor xml:id="Toc413566662" />
+				<anchor xml:id="Toc426264289" />
+				Text 2 Disnis Gang zum Eisgeist
+				<note place="foot" xml:id="ftn2" n="2">
+					<p rend="footnote text">
+						<hi style="font-size:8.5pt" xml:space="preserve"> Erzähler: Abdur Rahim.</hi>
+					</p>
+				</note>
+			</p>
+			<list type="ordered" lang="prn">
+				<item>
+					Opozˈık tu-Ḍˈūr Mәnǰˈem Mәlˈeg noċˈogso, Opozˈık tu-Ḍˈur ašlˈegso
+					<note place="foot" xml:id="ftn3" n="3">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Oder: </hi>
+							<hi rend="italic" style="font-size:8.5pt">ašlyogso</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					.
+				</item>
+				<item>
+					Dˈīsnīš tu-gˈul lˈesċego
+					<note place="foot" xml:id="ftn4" n="4">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Oder: </hi>
+							<hi rend="italic" style="font-size:8.5pt">lesċˈego</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					.
+				</item>
+				<item>
+					Dˈīsnīš arˈi pulˈogo Mәnǰˈәm Mәlˈәk: „әskˈala üzˈü bәs pöimˈaso
+					<note place="foot" xml:id="ftn5" n="5">
+						<p rend="footnote text">
+							<hi rend="italic" style="font-size:8.5pt">pömaso</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve"> wurde 1970 geändert in </hi>
+							<hi rend="italic" style="font-size:8.5pt">pöimˈaso</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve"> („kommt aus der Nähe herab“ ist im Zusammenhang nicht plausibel).</hi>
+						</p>
+					</note>
+					. üo leptˈī wyenjˈǖ-wōnjˈü čū würüölˈü
+					<note place="foot" xml:id="ftn6" n="6">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Feierlich für: </hi>
+							<hi rend="italic" style="font-size:8.5pt">würelˈi</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					әm-pa aċ!“
+				</item>
+				<item>Dˈīsnī leptˈogso. atig čkür wut nonˈi so. </item>
+				<item>žinzˈī-ninzˈī na wolˈogso. atilˈī pyerˈǖ apˈeċogso. Opuzˈık
+					tu-Ḍˈur Mәnǰˈǝm Mәlˈek-pa āċˈogso. </item>
+				<item>kolyˈogo: „unzˈū wut linˈig na wolˈogsum, wut na gˈāso.“
+				</item>
+				<item> Mәnǰˈem Mәlˈeg arˈi pulˈogo: „lužˈũ to-mˈunǰ kaṭˈa әṣṭˈәg
+					üˈo-sċ; üu na wolˈi-ṭkoma atˈәs wәǰǰimˈī wolnīg-nˈā-last.“ </item>
+				<item>Dˈīsnī leptˈogso. ištˈür wījˈī žāreg-pˈan latˈego. </item>
+				<item> lög wәz olˈü saščˈego. lenjˈī-pyenjimˈiso. </item>
+				<item>lāc̣ kum lyˈogo, siwˈũ kum lyˈogo, na byetˈat byetˈat lyˈogo.
+					lonosˈogso. </item>
+				<item>
+					atˈǖri tyenjˈogso. mˈiš ižˈĩ anjenˈīg-pan atˈig üzˈǖ kštyū worˈī
+					līptˈī t-ügyˈok tepte šilˈegso
+					<note place="foot" xml:id="ftn7" n="7">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Mit Vokalassimilation für: </hi>
+							<hi rend="italic" style="font-size:8.5pt" xml:space="preserve">tiptˈa šilˈegso </hi>
+							<hi style="font-size:8.5pt">„setzte an, hineinzugehen“.</hi>
+						</p>
+					</note>
+					.
+				</item>
+				<item>
+					sim nˈāznogo
+					<note place="foot" xml:id="ftn8" n="8">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Für </hi>
+							<hi rend="italic" style="font-size:8.5pt">na ǝznˈogo.</hi>
+						</p>
+					</note>
+					. tigˈegso, tigˈe
+					<note place="foot" xml:id="ftn9" n="9">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> üblicher: </hi>
+							<hi rend="italic" style="font-size:8.5pt">tigyˈo</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					tige tiptˈogso, üzˈü kštyˈū-pan sāpˈogso,
+				</item>
+				<item>
+					lenjˈī-penjimˈiso, sim nˈāznogo. üomˈū
+					<note place="foot" xml:id="ftn10" n="10">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Ungewöhnliche Variante für: </hi>
+							<hi rend="italic" style="font-size:8.5pt">ümˈū, imˈū.</hi>
+						</p>
+					</note>
+					tityˈogo üzˈǖ kštyˈū-pan: wiǰǰәmˈī c̣ā bǝs ayego, ṣә c̣ā bes
+					ˈāyego.
+				</item>
+				<item>atilˈǖ (atilˈī) würˈǖ pyeċˈogso, Opozˈık tu-Ḍˈur Mәnǰˈem
+					Mǝlˈeg-pa aċˈogso. </item>
+				<item>Mәnǰˈem Mǝlˈeg arˈi pulˈogo: “lužˈũ tu-mˈunǰ kaṭˈa wikṣˈī
+					lesċˈẹma üū pse na wolˈogne al ˈānig-elˈaš?“ 16.</item>
+				<item>Dˈīsnī pulˈogo: „unzˈū na wolˈogsum, üzü kštˈū so, ǝm
+					tu-lustˈa na gˈāso, na wolˈogsum. </item>
+				<item>üo Mǝnǰem Mǝleg kˈaṭ laš, ütˈeš ṣu ajˈom, unzˈū na wolˈogsum.“
+				</item>
+				<item>Mǝnǰem Mǝleg pulmˈaso Dˈīsnīš, mˈiš kǝmǝr puskˈa-pan saṭˈogso,
+					Mǝnǰem Mǝleg čǝčel mar tipˈī tu-lˈust aplyˈego Dˈīsnīš:</item>
+				<item>
+					„arˈi lepčˈī tu-gˈul lyoṭogˈı
+					<note place="foot" xml:id="ftn11" n="11">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Die Lautung des Präverbs </hi>
+							<hi rend="italic" style="font-size:8.5pt">lyo</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve">- in </hi>
+							<hi rend="italic" style="font-size:8.5pt">lyoṭogˈı</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve"> und </hi>
+							<hi rend="italic" style="font-size:8.5pt">lyopˈoi</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve"> ist eine ungewöhnliche Variante für </hi>
+							<hi rend="italic" style="font-size:8.5pt">lo-</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					ari üzi kštˈū-pan lyopˈoi arˈi a-dülˈū lisċˈe. ščil mar orˈom ǝgˈal
+					agˈaso.
+				</item>
+				<item>üu öslˈašlis (öslˈǝ ašlis)! üzü kštū wiligˈaso, üo pyenjˈe-dẹ
+					würüölˈǖ wǝǰǰimˈīš atˈī ǝm-pˈa gǝzˈǝ!“ </item>
+				<item>Dˈīsnī leptˈogso. üzǖ wilˈī aptˈogso. </item>
+				<item>pyenjimˈiso: atˈig wǝǰǰimˈī sur to-mˈunǰ kū bitˈī kaṭˈa žˈiċen
+					lī kˈū-pan ašlˈegso. </item>
+				<item>itˈī Dˈīsnī tak wirewˈī tyenjimˈiso, miš tü-bˈǖd krǝk bˈogso:
+					„arˈiš atˈī pšǝnˈig so.“ </item>
+				<item>
+					Dˈīsnī arˈi pulyˈogo: „Mǝnǰem Mǝlǝg ütyˈöš
+					<note place="foot" xml:id="ftn12" n="12">
+						<p rend="footnote text">
+							<hi rend="italic" style="font-size:8.5pt">ütyˈöš</hi>
+							<hi style="font-size:8.5pt" xml:space="preserve"> ist die Form des Dialekts von I., sonst </hi>
+							<hi rend="italic" style="font-size:8.5pt">ütˈeš</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					c̣ālyego. ličˈǝs pǝzˈẹmšo!“ 25.
+				</item>
+				<item>Züzˈum pulˈogo Dˈīsnīš: „üo al ps-ag āmǝ-rˈa-sċ, al sučˈū gul
+					nˈa-lam-eĩ! ī ḍigǝr ṭǝ bidimˈo ǝm sur-pan ps-ag ānīg-(e)lˈaš?“
+				</item>
+				<item>
+					Dˈīsnī pulyˈogo: „Mǝnǰem Mǝleg Opozıg tu-Ḍˈur nˈoċˈī miš siwˈũ kū
+					bitˈī ašlˈī gul-gˈul lọ̄ižũlugˈan
+					<note place="foot" xml:id="ftn13" n="13">
+						<p rend="footnote text">
+							<hi rend="italic" style="font-size:8.5pt" xml:space="preserve">lọ̄ižũ </hi>
+							<hi style="font-size:8.5pt">ist eine ungewöhnliche Variante von</hi>
+							<hi rend="italic" style="font-size:8.5pt" xml:space="preserve"> lužũ.</hi>
+						</p>
+					</note>
+					tiẓguwˈī ašlˈī ozmˈaso.
+				</item>
+				<item>ǝndˈeš ütˈeš c̣alyeg-lˈa, pǝznig-lamš!“ </item>
+				<item>Züzˈum arˈi pulyˈogo: „unzˈū peptiga-nˈa-sǝm!“ Dˈīsnī
+					pulyˈogo: „pǝznˈīg-lamš!“ </item>
+				<item>Züzˈum arˈi pulmˈaso: „ˈī-pan peptenˈīg na wičugˈa-lam, unzˈū
+					ǝm lusta ānīg-lam. üo pewištˈočǝs!“ </item>
+				<item>Dˈīsnī pyeċˈogso. gul pyeṭˈogog-pan ǰarˈeg-pan sˈǖnyˈa öyˈu
+					lī tiptˈī ozmˈiso. </item>
+				<item>üomˈū wityˈema gul aẓoẓˈogso. </item>
+				<item>tak wirˈogso. üčosˈogso. žatẽ žˈāreg-pˈan lānosˈogso. </item>
+				<item>nyenjˈogso: gul pyeċˈog-panˈī mar kuṇḍˈī tüšpyˈogso,
+					liptˈogso. </item>
+				<item>Dˈīsnī nyenjˈī tak wiryˈogso. alˈagi üčosˈogso. </item>
+				<item>sap otilˈī nyenjˈogso: mar kumḍˈī (!)-panˈī lˈipoṭeg Züzˈum
+					ašlˈī ozmˈaso. </item>
+				<item>Züzˈum „ˈo Dīsnī tˈemisċ?“ lyˈogo. </item>
+				<item>Dˈīsnī arˈi pulyˈogo: „unzˈū üčosˈogsum, üo welˈewī
+					āmasċ-amǝ̃; aptˈerogsum, üčosˈogsum.“ </item>
+				<item>Züzˈum arˈi pulyˈogo: „unzˈū sum.“ </item>
+				<item>Dˈīsnī neptˈogso, to-gˈul netyˈogso. </item>
+				<item>Züzˈum ari pulyˈogo: „üo žˈāžečas! unzˈū beptˈẹm-dī,
+					to-gulˈaw beṭogˈı, lorˈī čkü wǝrˈī wǝrˈī wˈẹmo, itˈī sas na lam.“
+				</item>
+				<item>beptˈogso. to-gulˈāw beṭogˈogso, atilˈī lorˈī sǝmˈiš-pa aċˈī
+					ütyˈogso. </item>
+				<item>Züzum pulˈogo: „ǝndˈeš te-pčinig-laš? aċogsum!“ </item>
+				<item>Dˈīsnī pulˈogo: „žitāsˈig wī žiwˈišt! Mǝnǰˈem Malˈǝg Opozıg
+					tu-Ḍˈur c̣alˈeg-la, ažˈiptinig-lamš.“ </item>
+				<item>Züzˈum žiwištyˈogso. žopˈoi Mǝnǰǝm Mǝlˈeg-pa ütyˈogso.</item>
+				<item>wuluzgyˈego t-ūtˈī litˈī solˈom lī žatyˈogso. </item>
+				<item>kolyˈogo Mǝnǰˈǝm Mǝlˈeg: „aċˈogosċ-ī? üščümˈoga aċˈogosċ-ī?“
+				</item>
+				<item>atˈig gˈǝndar kū bītˈī „ašlˈis“ lˈego, miš-pan apˈī ašliwˈogo.
+				</item>
+				<item>Mǝnǰˈǝm Mǝlˈeg darbˈar lyˈego. sǝmˈiš werˈīš
+					ps-kolˈog-po-la-ro ogˈo lǝgˈust. </item>
+				<item>
+					lust lyenjǝwˈı bikoṣˈī yās tu-gˈul wigˈogust
+					<note place="foot" xml:id="ftn14" n="14">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Üblicher: </hi>
+							<hi rend="italic" style="font-size:8.5pt">wigyˈogust.</hi>
+						</p>
+					</note>
+					(pǝzˈogust). Mǝnǰˈǝm Mǝlˈeg miš to-gˈul pǝzˈogso.
+				</item>
+			</list>
+			<p rend="prn_head">
+				<anchor xml:id="Toc413527234" />
+				<anchor xml:id="Toc413529115" />
+				<anchor xml:id="Toc413566663" />
+				<anchor xml:id="Toc426264290" />
+				Text 3 Preislied auf einen Verdienstfestgeber
+				<note place="foot" xml:id="ftn15" n="15">
+					<p rend="footnote text">
+						<hi style="font-size:8.5pt" xml:space="preserve"> Erzähler: Abdur Rahim.</hi>
+					</p>
+				</note>
+			</p>
+			<list type="ordered">
+				<item>to-wǝṭ leptˈī atig wǝǰǰimˈī sǝt gọ̄ṭ la. </item>
+				<item>ǝḍu lošẽ saṭogˈog-pan gandˈar ẓik (ǝẓˈik) so. </item>
+				<item>ǝstlˈeg werˈī-pan wǝṭ lyˈego. </item>
+				<item>ǝstlˈǝg wǝǰǰimˈī Kǝ̃-Dū̃gˈū nǝm so. </item>
+				<item>obˈüŋya gunˈīg kǝžiwˈaž arˈi žatigˈaso. </item>
+				<item>wuẓ gul Wasyˈen c̣ālyˈego. širyˈe pˈogso. </item>
+				<item>širyˈog-wā lyˈego. </item>
+				<item>sidĩ lawǝrjˈego. </item>
+				<item>nǝm kšteiwˈogso.</item>
+			</list>
+			<p rend="prn_head">
+				<anchor xml:id="Toc413527235" />
+				<anchor xml:id="Toc413529116" />
+				<anchor xml:id="Toc413566664" />
+				<anchor xml:id="Toc426264291" />
+				Text 4 Eheschluss bei den Kafiren
+				<note place="foot" xml:id="ftn16" n="16">
+					<p rend="footnote text">
+						<hi style="font-size:8.5pt" xml:space="preserve"> Erzähler: Durmat.</hi>
+					</p>
+				</note>
+			</p>
+			<list type="ordered">
+				<item> atig wǝǰǰimˈī atig wǝstˈī pulyˈogo. </item>
+				<item> itˈī t-arˈǝg gǝzmˈaso. </item>
+				<item> itˈī tā pǝzˈogso. </item>
+				<item> atig ṣǝ atˈī pǝzˈogso. </item>
+				<item> itˈī lust lyenjewˈī amǰˈogust. </item>
+				<item> obˈüŋya ličˈī laṭogmˈast. </item>
+				<item> sorˈogust, tak pčī wǝstˈīš t-arˈeg pčˈego. </item>
+				<item> mišin t-arˈeg tüščerˈogust. </item>
+				<item> čpoež göṣ gǝzˈogo. </item>
+				<item>lust lyenjiwˈī amǰˈü ǝskyˈego. </item>
+				<item>itˈī gˈǝman c̣ālyˈego. abˈǝg aplyˈego.</item>
+			</list>
+			<p rend="prn_head">
+				<anchor xml:id="Toc413527236" />
+				<anchor xml:id="Toc413529117" />
+				<anchor xml:id="Toc413566665" />
+				<anchor xml:id="Toc426264292" />
+				Text 5 Güšünǰog
+			</p>
+			<list type="ordered">
+				<item>
+					atig Güščünǰˈog wˈǝsa. tiptˈī-wuptīčigˈa
+					<note place="foot" xml:id="ftn17" n="17">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Für: </hi>
+							<hi rend="italic" style="font-size:8.5pt">wuptočigˈa.</hi>
+						</p>
+					</note>
+					-wǝsˈa.
+				</item>
+				<item>atig ǝwˈa üštyˈüb-pan leptˈogso. </item>
+				<item>
+					atig purdˈī abˈeštya kuẓˈū-pan ütˈogso
+					<note place="foot" xml:id="ftn18" n="18">
+						<p rend="footnote text">
+							<hi style="font-size:8.5pt" xml:space="preserve"> Oder: </hi>
+							<hi rend="italic" style="font-size:8.5pt">ütyˈogso</hi>
+							<hi style="font-size:8.5pt">.</hi>
+						</p>
+					</note>
+					.
+				</item>
+				<item>„Güšünǰog, ǝwa pejˈǝ!“ lyˈogo. purdˈīš atig ǝwa pejˈogo.
+				</item>
+				<item>purdˈī ari kulyˈogo: „ti-bˈim pijogˈa na oyˈigsmo” lyˈogo.
+				</item>
+				<item>Güšünǰog kulyˈogo: “ps-pan pejemˈa üo oinig-laš?“ </item>
+				<item>purdˈī kulyˈogo: „tu-ẓˈum pejˈe, čkü oyˈẹmo!“ Güšünǰˈog
+					tu-ẓˈum pejˈogo. </item>
+				<item>„na oyˈigsmo“ purdˈī lyˈogo. „o žištyˈa ps-pan pejemˈa
+					oinig-laš?“</item>
+				<item>žišt kolyˈogo: „ˈīs-pan sojomˈā oinig-lˈamo.“ Güšünǰog ˈīs-pan
+					sojˈogo. </item>
+				<item>žišt kolyogo: „ˈīs-pan sojˈog na oinig-lˈamo.“ – „ps-pan
+					pejemˈa oinig-laš?“ – </item>
+				<item> „ċˈāga bipunˈīg biprˈig bipuwˈī ċǝwˈǝg-pan sāanjewˈī üo apˈī
+					ǰī salˈī sāačelomˈa čkü oinig-lˈamo.“ </item>
+				<item> Güšünǰog krǝk lyˈogo. purdī Güšünǰˈogš ċǝwˈǝg-pan sāpetˈü ċak
+					tyˈego. </item>
+				<item> t-arˈig pščˈego, kˈū-pan ašlewˈogo. </item>
+				<item> gǝndar werˈī wočuwˈī ṭǝpˈā-pan t-inig atyˈego. </item>
+				<item> Güšünǰˈogš pöpütyˈogo.</item>
+				<item> anˈig ǝskyˈego, Güšünǰˈog tükočˈogso (Güšünǰˈogš tükučˈogo).
+				</item>
+			</list>
+		</body>
+	</text>
+</TEI>

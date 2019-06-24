@@ -1,4 +1,4 @@
-package dh.master.info.data;
+package dh.master.info.model;
 
 public interface NuristaniDAO {
 

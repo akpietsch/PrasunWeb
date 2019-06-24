@@ -1,6 +1,6 @@
-package dh.master.info.data;
+package dh.master.info.model;
 
-public class Nuristani {
+public class Work {
 
 	private String heading;
 	private String text;
