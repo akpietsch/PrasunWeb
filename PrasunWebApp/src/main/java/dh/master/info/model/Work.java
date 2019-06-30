@@ -1,43 +1,76 @@
 package dh.master.info.model;
 
-public class Work {
+import java.io.Serializable;
+import java.util.List;
 
-	private String heading;
-	private String text;
-	private String annotation;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-	public String getAnnotation() {
-		return annotation;
+@Entity(name = "Works")
+@Table(name = "works")
+public class Work implements Serializable {
+
+	private static final long serialVersionUID = -2333662636408115444L;
+
+	@Id
+	@GeneratedValue
+	@JsonIgnore
+	private Integer id;
+	private String author;
+
+	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
+	private List<Title> titles;
+
+	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
+	private List<Footnote> footnotes;
+
+	public Work() {
+
 	}
 
-
-	public void setAnnotation(String annotation) {
-		this.annotation = annotation;
+	public Work(List<Title> titles, List<Footnote> footnotes) {
+		this.titles = titles;
+		this.footnotes = footnotes;
 	}
 
-	public String getHeading() {
-
-		return heading;
+//	----> Setter & Getter
+	
+	public List<Title> getTitles() {
+		return titles;
 	}
 
-
-	public void setHeading(String heading) {
-
-		this.heading = heading;
+	public void setTitles(List<Title> titles) {
+		this.titles = titles;
 	}
 
-
-	public String getText() {
-		return text;
+	public List<Footnote> getFootnotes() {
+		return footnotes;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setFootnotes(List<Footnote> footnotes) {
+		this.footnotes = footnotes;
 	}
 
-	@Override
-	public String toString() {
-		return "Nuristani [heading=" + heading + ", text=" + text + ", annotation=" + annotation + "]";
+	public Integer getId() {
+		return id;
 	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
 }
