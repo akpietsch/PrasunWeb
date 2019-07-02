@@ -7,7 +7,9 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
+		<!-- lookup parent from repository -->
+
 	</parent>
 	<groupId>dh.info</groupId>
 	<artifactId>PrasuniWebApp</artifactId>
@@ -38,8 +40,15 @@
 		<!-- Search engine -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-elasticsearch</artifactId>
+			<artifactId>spring-data-commons</artifactId>
+			<!-- <artifactId>spring-data-elasticsearch</artifactId> -->
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -66,6 +75,10 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Runtime, for Embedded Elasticsearch, comment this if connect to external 
+			elastic search server <dependency> <groupId>net.java.dev.jna</groupId> <artifactId>jna</artifactId> 
+			<scope>runtime</scope> </dependency> -->
 	</dependencies>
 	<build>
 		<plugins>

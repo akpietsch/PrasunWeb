@@ -4,61 +4,70 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-@Entity(name = "Works")
+@Entity
 @Table(name = "works")
 public class Work implements Serializable {
 
 	private static final long serialVersionUID = -2333662636408115444L;
 
 	@Id
-	@GeneratedValue
-	@JsonIgnore
+	@Column(name = "work_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String author;
+	String author;
+	String introduction;
+	private String glossary;
 
 	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
-	private List<Title> titles;
-
-	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
-	private List<Footnote> footnotes;
+	private List<Section> sections;
 
 	public Work() {
 
 	}
 
-	public Work(List<Title> titles, List<Footnote> footnotes) {
-		this.titles = titles;
-		this.footnotes = footnotes;
-	}
-
-//	----> Setter & Getter
-	
-	public List<Title> getTitles() {
-		return titles;
-	}
-
-	public void setTitles(List<Title> titles) {
-		this.titles = titles;
-	}
-
-	public List<Footnote> getFootnotes() {
-		return footnotes;
-	}
-
-	public void setFootnotes(List<Footnote> footnotes) {
-		this.footnotes = footnotes;
+	public Work(Integer id, String author, String introduction, String glossary, List<Section> sections) {
+		super();
+		this.id = id;
+		this.author = author;
+		this.introduction = introduction;
+		this.glossary = glossary;
+		this.sections = sections;
 	}
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getIntroduction() {
+		return introduction;
+	}
+
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
+
+	public String getGlossary() {
+		return glossary;
+	}
+
+	public void setGlossary(String glossary) {
+		this.glossary = glossary;
+	}
+
+	public List<Section> getParagraphs() {
+		return sections;
+	}
+
+	public void setParagraphs(List<Section> sections) {
+		this.sections = sections;
 	}
 
 	public void setId(Integer id) {

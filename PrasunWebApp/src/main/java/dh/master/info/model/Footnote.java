@@ -2,90 +2,88 @@ package dh.master.info.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@Entity(name = "Footnotes")
+@Entity
 @Table(name = "footnotes")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+
 public class Footnote implements Serializable {
 	private static final long serialVersionUID = -5590869234980268995L;
 
 	@Id
 	@GeneratedValue
-	@JsonIgnore
 	private Integer id;
-	private String ftnText;
-	private String position;
+	private String startString ;
+	private String resultString;
+	private int postition;
 
 	
 
-	@ManyToOne
-	@JoinColumn(name = "workID", nullable = false)
-	private Work work;
-
+	private Sentence sentence;
+	
+	
 	public Footnote() {
 
 	}
-
-// -->Position
-	public String getPosition() {
-		return position;
-	}
-
-	public Footnote setPosition(String position) {
-		this.position = position;
-		return this;
-	}
-
-	public Boolean hasPosition() {
-		return (position != null && !position.isEmpty());
-	}
-
-//--> Werk
-	public Work getWork() {
-		return work;
-	}
-
-	public Footnote setWork(Work work) {
-		this.work = work;
-		return this;
-	}
-
-//-->ID
+	
+	
 	public Integer getId() {
 		return id;
 	}
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Boolean hasId() {
-		return (id != null && id > 0);
+
+	public String getStartString() {
+		return startString;
 	}
 
-//--> Footnote Text
-	public String getFtnText() {
-		return ftnText;
+
+	public void setStartString(String startString) {
+		this.startString = startString;
 	}
 
-	public Footnote setFtnText(String ftnText) {
-		this.ftnText = ftnText;
-		return this;
+
+	public String getResultString() {
+		return resultString;
 	}
 
-	public Boolean hasFtnText() {
-		return (ftnText != null && !ftnText.isEmpty());
+
+	public void setResultString(String resultString) {
+		this.resultString = resultString;
 	}
+
+
+	public int getPostition() {
+		return postition;
+	}
+
+
+	public void setPostition(int postition) {
+		this.postition = postition;
+	}
+
+
+	public Sentence getSentence() {
+		return sentence;
+	}
+
+
+	public void setSentence(Sentence sentence) {
+		this.sentence = sentence;
+	}
+
+
+
+
+
+	
 
 }

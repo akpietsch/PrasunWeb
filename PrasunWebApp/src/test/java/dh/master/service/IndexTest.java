@@ -9,8 +9,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
 
-import dh.master.info.model.Work;
-
 public class IndexTest {
 
 	private Document doc;

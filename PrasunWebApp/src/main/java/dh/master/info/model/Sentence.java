@@ -1,51 +1,48 @@
 package dh.master.info.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Entity(name = "Sentences")
+@Entity
 @Table(name = "sentences")
-public class Sentence extends Title implements Serializable {
-	
-	private static final long serialVersionUID = 6517072584087211218L;
+public class Sentence implements Serializable {
+
+	private static final long serialVersionUID = -8886043628545653675L;
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 
 	private String content;
+	
+	@ManyToMany
+	List<Footnote> footnotes;
+	
 
-	@ManyToOne
-	@JoinColumn(name = "titleID")
-	private Title title;
-
-	@OneToMany
-	@Column(nullable = false)
-	private String language;
 
 	public Sentence() {
 
 	}
 
-	public Sentence(Title title, String language) {
-		this.title = title;
-		this.language = language;
+
+
+	public Sentence(Integer id, String content) {
+		this.id=id;
+		this.content=content;
 	}
 
 //---->Setter& Getter
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -64,13 +61,13 @@ public class Sentence extends Title implements Serializable {
 	public Boolean hasContent() {
 		return (content != null && id > 0);
 	}
-
-	public String getLanguage() {
-		return language;
+	public List<Footnote> getFootnotes() {
+		return footnotes;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setFootnotes(List<Footnote> footnotes) {
+		this.footnotes = footnotes;
 	}
+
 
 }
