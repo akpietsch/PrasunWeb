@@ -3,7 +3,6 @@ package dh.master.info.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -71,5 +70,5 @@ public class Locale implements Serializable {
 		default:
 			return Language.WILDCARD;
 		}
-}
+	}
 }
