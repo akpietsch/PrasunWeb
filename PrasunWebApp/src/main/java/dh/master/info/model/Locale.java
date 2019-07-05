@@ -1,74 +1,64 @@
 package dh.master.info.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Accessors(chain = true)
 
 @Entity
 @Table(name = "locales")
 public class Locale implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8014050154361201346L;
+
 	@Id
 	@GeneratedValue
 	private Integer id;
+
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Section section;
 
-	@OneToOne
-	private Language lang;
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Language language;
 
-	@ManyToMany
-	private List<Sentence> content;
+	@OneToOne
+	@JoinColumn(nullable = false)
 	private Sentence title;
 
-	public Section getParagraph() {
-		return section;
-	}
+	@OneToMany(mappedBy = "locale", cascade = CascadeType.ALL)
+	private List<Sentence> content;
 
-	public void setParagraph(Section section) {
-		this.section = section;
-	}
 
-	public Language getLang() {
-		return lang;
-	}
+	public Locale addSentence(Sentence sentence) {
+		if (sentence != null) {
+			if (this.content == null) {
+				this.content = new ArrayList<Sentence>();
+			}
+			this.content.add(sentence.setLocale(this));
 
-	public void setLang(Language lang) {
-		this.lang = lang;
-	}
-
-	public Sentence getTitle() {
-		return title;
-	}
-
-	public void setTitle(Sentence title) {
-		this.title = title;
-	}
-
-	public List<Sentence> getContent() {
-		return content;
-	}
-
-	public void setContent(List<Sentence> content) {
-		this.content = content;
-	}
-
-	public Language getLanguage(String language) {
-		switch (language) {
-		case "de":
-			return Language.GERMAN;
-		case "prn":
-			return Language.Prasun;
-		default:
-			return Language.WILDCARD;
 		}
+		return this;
+
 	}
 }

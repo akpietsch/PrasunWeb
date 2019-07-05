@@ -1,85 +1,61 @@
 package dh.master.info.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Accessors(chain = true)
 
 @Entity
 @Table(name = "works")
 public class Work implements Serializable {
 
-	private static final long serialVersionUID = -2333662636408115444L;
+	private static final long serialVersionUID = -4066191514208159663L;
 
 	@Id
-	@Column(name = "work_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private Integer id;
-	String author;
-	String introduction;
-	private String glossary;
 
 	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
 	private List<Section> sections;
 
-	public Work() {
+	private String author;
 
-	}
+	private String introduction;
 
-	public Work(Integer id, String author, String introduction, String glossary, List<Section> sections) {
-		super();
-		this.id = id;
+	private String glossary;
+
+	public Work(String author, String introduction, String glossary) {
 		this.author = author;
 		this.introduction = introduction;
 		this.glossary = glossary;
-		this.sections = sections;
 	}
+	
+	public Work addSection(Section section) {
+		if (section != null) {
+			if (this.sections == null) {
+				this.sections = new ArrayList<Section>();
+			}
 
-	public Integer getId() {
-		return id;
-	}
+			this.sections.add(section.setWork(this));
+		}
 
-	public String getIntroduction() {
-		return introduction;
-	}
-
-	public void setIntroduction(String introduction) {
-		this.introduction = introduction;
-	}
-
-	public String getGlossary() {
-		return glossary;
-	}
-
-	public void setGlossary(String glossary) {
-		this.glossary = glossary;
-	}
-
-	public List<Section> getParagraphs() {
-		return sections;
-	}
-
-	public void setParagraphs(List<Section> sections) {
-		this.sections = sections;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+		return this;
+}
 
 }

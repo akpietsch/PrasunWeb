@@ -1,16 +1,25 @@
 package dh.master.info.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 
 @Entity
 @Table(name = "languages")
-
 public class Language implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -18,13 +27,12 @@ public class Language implements Serializable {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@OneToOne
-	private Locale locale;
 
-	public static final Language GERMAN = null;
+	@OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
+	private List<Locale> locale;
 
-	public static final Language Prasun = null;
+	private String code;
 
-	public static final Language WILDCARD = null;
+	private String title;
 
 }
