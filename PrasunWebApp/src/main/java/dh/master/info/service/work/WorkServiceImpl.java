@@ -46,16 +46,6 @@ public class WorkServiceImpl implements WorkService {
 		return works.findAll(pageable);
 	}
 
-	@Override
-	public List<Work> search(String term) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public Page<Work> search(Pageable pageable, String term) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

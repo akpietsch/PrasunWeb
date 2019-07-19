@@ -39,4 +39,8 @@ public class Footnote implements Serializable {
 
 	private String target;
 
+
+	
+	
+
 }

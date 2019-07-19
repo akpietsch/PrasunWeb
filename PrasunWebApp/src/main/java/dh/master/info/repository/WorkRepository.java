@@ -13,7 +13,9 @@ import dh.master.info.model.Work;
 public interface WorkRepository extends CrudRepository<Work, Integer> {
 
 	public Work findOneById(Integer workId);
-	public List<Work> findAll();
-	public Page<Work> findAll(Pageable pageable);
 	
+	public List<Work> findAll();
+	
+	public Page<Work> findAll(Pageable pageable);
+
 }

@@ -42,18 +42,12 @@ public class Sentence implements Serializable {
 
 	private String content;
 
-	public Sentence(Integer id, String content) {
-		this.id = id;
-		this.content = content;
-	}
-	
 	public Sentence addFootnote(Footnote footnote) {
 		if (footnote != null) {
 			if (this.footnotes == null) {
 				this.footnotes = new ArrayList<Footnote>();
 			}
 			this.footnotes.add(footnote.setSentence(this));
-
 		}
 		return this;
 

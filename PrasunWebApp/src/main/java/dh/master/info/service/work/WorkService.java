@@ -19,10 +19,7 @@ public interface WorkService {
 
 	public Page<Work> getAll(Pageable pageable);
 
-	public List<Work> search(String term);
-
-	public Page<Work> search(Pageable pageable, String term);
-
+	
 	default public Boolean existsById(Integer workId) {
 		return (workId != null && getOneById(workId) != null);
 	}

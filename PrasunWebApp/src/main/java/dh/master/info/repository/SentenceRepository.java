@@ -7,15 +7,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import dh.master.info.model.Locale;
+import dh.master.info.model.Sentence;
 
 @Repository
-public interface LocaleRepository extends CrudRepository<Locale, Integer> {
+public interface SentenceRepository extends CrudRepository<Sentence, Integer> {
 
-	public Locale findOneById(Integer localeId);
+	public Sentence findOneById(Integer sentenceId);
 
-	public List<Locale> findAll();
+	public List<Sentence> findAll();
 
-	public Page<Locale> findAll(Pageable pageable);
+	public Page<Sentence> findAll(Pageable pageable);
 
 }

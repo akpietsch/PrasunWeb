@@ -50,15 +50,29 @@ public class Locale implements Serializable {
 	private List<Sentence> content;
 
 
+	
 	public Locale addSentence(Sentence sentence) {
 		if (sentence != null) {
 			if (this.content == null) {
 				this.content = new ArrayList<Sentence>();
 			}
+
 			this.content.add(sentence.setLocale(this));
-
 		}
-		return this;
 
+		return this;
 	}
+	
+	public Locale addLanguage(Language language) {
+		if (language != null) {
+			language.setLocale(null);
+			}
+
+		return this;
+	}
+		
+		
+	
+	
+
 }

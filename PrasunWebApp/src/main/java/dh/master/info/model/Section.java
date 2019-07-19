@@ -44,7 +44,7 @@ public class Section implements Serializable {
 		this.id = id;
 		this.locales = locales;
 	}
-
+	
 	public Section addLocale(Locale locale) {
 		if (locale != null) {
 			if (this.locales == null) {
@@ -55,6 +55,7 @@ public class Section implements Serializable {
 		}
 
 		return this;
+	}
 	
-}
+
 }

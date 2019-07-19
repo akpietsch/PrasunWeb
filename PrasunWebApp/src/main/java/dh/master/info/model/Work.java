@@ -45,7 +45,7 @@ public class Work implements Serializable {
 		this.introduction = introduction;
 		this.glossary = glossary;
 	}
-	
+
 	public Work addSection(Section section) {
 		if (section != null) {
 			if (this.sections == null) {
@@ -56,6 +56,7 @@ public class Work implements Serializable {
 		}
 
 		return this;
-}
+
+	}
 
 }
