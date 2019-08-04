@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -34,28 +35,25 @@ public class Section implements Serializable {
 	private Integer id;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "work_id", nullable = false)
+	@JoinColumn(nullable = false)
 	private Work work;
 
+	// ISO 639-3 Language Code "prn" "deu"
+	private String locale;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private Sentence title;
+
 	@OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
-	private List<Locale> locales;
+	private List<Sentence> sentences = new ArrayList<Sentence>();
 
-	public Section(Integer id, List<Locale> locales) {
-		this.id = id;
-		this.locales = locales;
-	}
-	
-	public Section addLocale(Locale locale) {
-		if (locale != null) {
-			if (this.locales == null) {
-				this.locales = new ArrayList<Locale>();
-			}
-
-			this.locales.add(locale.setSection(this));
+	// Spread Operator
+	public Section addSentences(Sentence... sentences) {
+		for (Sentence sentence : sentences) {
+			this.sentences.add(sentence.setSection(this));
 		}
 
 		return this;
 	}
-	
 
 }

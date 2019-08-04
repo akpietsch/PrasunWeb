@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import dh.master.info.model.Footnote;
-import dh.master.info.model.Language;
-import dh.master.info.model.Locale;
 import dh.master.info.model.Section;
 import dh.master.info.model.Sentence;
 import dh.master.info.model.Work;
@@ -26,41 +24,8 @@ public class WorkController {
 	public ModelAndView list(Pageable pageable) {
 		ModelAndView mv = new ModelAndView("test");
 		Page<Work> page = works.getAll(pageable);
-
-		Work work = new Work();
-		work.setAuthor("author");
-		work.setGlossary("gloss");
-		work.setIntroduction("intro");
-
-		Section section = new Section();
-		work.addSection(section);
-
-		Locale locale = new Locale();
-		section.addLocale(locale);
-		Language language = new Language();
-		locale.addLanguage(language);
-		language.setCode("en");
-		language.setLangTitle("English");
-
-		
-		Sentence title = new Sentence();
-		locale.addSentence(title);
-		title.setContent("This is a Title");
-
-		Sentence sentence = new Sentence();
-		locale.addSentence(sentence);
-		sentence.setContent("Content Sentence");	
-
-		Footnote footnote = new Footnote();
-		sentence.addFootnote(footnote);
-		footnote.setSource("Zwei");
-		footnote.setTarget("Two");
-		footnote.setSentence(sentence);
-
-		works.save(work);
-
 		mv.addObject("page", page);
-		mv.addObject("author", work.getAuthor());
+		page.getContent();
 		return mv;
 	}
 
@@ -70,6 +35,35 @@ public class WorkController {
 
 		mv.addObject("work", works.getOneById(workId));
 		return mv;
+	}
+
+	@GetMapping("/test")
+	public String test() {
+		Sentence title = new Sentence();
+		title.setContent("This is a Title");
+	
+		Footnote footnote = new Footnote();
+		footnote.setSource("Zwei");
+		footnote.setTarget("Two");
+
+		Sentence sentence = new Sentence();
+		sentence.setContent("Content Sentence");
+		sentence.addFootnote(footnote);
+
+		Section section = new Section();
+		section.setTitle(title);
+		section.addSentences(sentence);
+		section.setLocale("eng");
+
+		Work work = new Work();
+		work.setAuthor("author");
+		work.setGlossary("gloss");
+		work.setIntroduction("intro");
+		work.addSections(section);
+
+		works.save(work);
+
+		return "redirect:/list";
 	}
 
 }

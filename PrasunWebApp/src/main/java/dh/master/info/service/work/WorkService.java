@@ -19,7 +19,6 @@ public interface WorkService {
 
 	public Page<Work> getAll(Pageable pageable);
 
-	
 	default public Boolean existsById(Integer workId) {
 		return (workId != null && getOneById(workId) != null);
 	}

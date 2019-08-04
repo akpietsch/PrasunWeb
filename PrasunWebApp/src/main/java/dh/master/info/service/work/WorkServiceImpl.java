@@ -46,6 +46,4 @@ public class WorkServiceImpl implements WorkService {
 		return works.findAll(pageable);
 	}
 
-
-
 }

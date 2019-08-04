@@ -31,14 +31,14 @@ public class Work implements Serializable {
 	@GeneratedValue
 	private Integer id;
 
-	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
-	private List<Section> sections;
-
 	private String author;
 
 	private String introduction;
 
 	private String glossary;
+
+	@OneToMany(mappedBy = "work", cascade = CascadeType.ALL)
+	private List<Section> sections = new ArrayList<Section>();
 
 	public Work(String author, String introduction, String glossary) {
 		this.author = author;
@@ -46,17 +46,12 @@ public class Work implements Serializable {
 		this.glossary = glossary;
 	}
 
-	public Work addSection(Section section) {
-		if (section != null) {
-			if (this.sections == null) {
-				this.sections = new ArrayList<Section>();
-			}
-
+	public Work addSections(Section... sections) {
+		for (Section section : sections) {
 			this.sections.add(section.setWork(this));
 		}
 
 		return this;
-
 	}
 
 }

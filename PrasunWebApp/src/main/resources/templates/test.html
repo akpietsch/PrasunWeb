@@ -17,9 +17,17 @@
 </head>
 
 <body>
-<p th:text=${page}>This Text</p>
-<p th:text=${work}>This Text</p>
-
+	<div th:each="work : ${page.content}">
+		<p th:text=${work.author}></p>
+		<p th:text=${work.glossary}></p>
+		<div th:each="section : ${work.sections}">
+			<p>
+				<span th:text=${section.title.content}></span>
+				(<span th:text=${section.locale}></span>)
+			</p>
+			<p th:text="${sentence.content}" th:each="sentence : ${section.sentences}"></p>
+		</div>
+	</div>
 </body>
 
 </html>

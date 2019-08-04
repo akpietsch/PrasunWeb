@@ -15,6 +15,7 @@
 //
 //import dh.master.info.model.Footnote;
 //import dh.master.info.model.Locale;
+//import dh.master.info.model.Section;
 //import dh.master.info.model.Sentence;
 //
 //
@@ -31,7 +32,7 @@
 //
 //	}
 //
-//	public Locale parsePrasunTitles(Locale title, String heading, Sentence sentence) throws IOException {
+//	public Sentence parsePrasunTitles(Sentence title, String heading, Sentence sentence) throws IOException {
 //		List<Sentence> sentences = new ArrayList<Sentence>();
 //		for (Element head : doc.select("p[rend='prn_head']")) {
 //			Element text = head.nextElementSibling();

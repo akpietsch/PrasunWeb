@@ -35,22 +35,19 @@ public class Sentence implements Serializable {
 
 	@ManyToOne
 	@JoinColumn
-	private Locale locale;
+	private Section section;
 
 	@OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL)
-	private List<Footnote> footnotes;
+	private List<Footnote> footnotes = new ArrayList<Footnote>();
 
 	private String content;
 
-	public Sentence addFootnote(Footnote footnote) {
-		if (footnote != null) {
-			if (this.footnotes == null) {
-				this.footnotes = new ArrayList<Footnote>();
-			}
+	public Sentence addFootnote(Footnote... footnotes) {
+		for (Footnote footnote : footnotes) {
 			this.footnotes.add(footnote.setSentence(this));
 		}
-		return this;
 
+		return this;
 	}
 
 }
