@@ -13,10 +13,12 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@Accessors(chain = true)
 
 @Entity
 @Table(name = "languages")
@@ -25,7 +27,7 @@ public class Language implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue 
 	private Integer id;
 
 	@OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
@@ -33,7 +35,9 @@ public class Language implements Serializable {
 
 	private String code;
 
-	private String title;
+	private String langTitle;
+
+
 
 
 }

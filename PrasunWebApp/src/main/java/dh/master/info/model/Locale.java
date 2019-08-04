@@ -51,6 +51,7 @@ public class Locale implements Serializable {
 
 
 	
+	
 	public Locale addSentence(Sentence sentence) {
 		if (sentence != null) {
 			if (this.content == null) {
@@ -63,14 +64,20 @@ public class Locale implements Serializable {
 		return this;
 	}
 	
+	
 	public Locale addLanguage(Language language) {
-		if (language != null) {
-			language.setLocale(null);
+			language.setId(id);
+		return this;
+	}
+	
+	public Locale addTitle(Sentence sentence) {
+		if (title != null) {
+			title.getId();
+			title.getContent();
 			}
 
 		return this;
 	}
-		
 		
 	
 	
