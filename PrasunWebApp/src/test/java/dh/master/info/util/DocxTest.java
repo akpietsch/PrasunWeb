@@ -4,6 +4,7 @@ package dh.master.info.util;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.stream.Collectors;
 
 import org.apache.poi.openxml4j.util.ZipSecureFile;
@@ -26,10 +27,18 @@ public class DocxTest {
 			new ArrayList<XWPFTable>(xdoc.getTables()).forEach(table -> {
 				xdoc.removeBodyElement(xdoc.getPosOfTable(table));
 			});
-			
-			List<XWPFParagraph> main = xdoc.getParagraphs().stream().filter(p -> p.getText().matches("^Prasun-Texte von [0-9]{4}$")).collect(Collectors.toList());
-			
+
+			List<XWPFParagraph> main = xdoc	.getParagraphs()
+											.stream()
+											.filter(p -> p.getText().matches("^Prasun-Texte von [0-9]{4}$"))
+											.collect(Collectors.toList());
 			main.forEach(p -> System.out.println(p.getParagraphText()));
+
+			
+			
+			for (XWPFParagraph name : main) {
+				System.out.println(name.getParagraphText());
+			}
 
 //			xdoc.getParagraphs().forEach(paragraph -> {
 //				if (paragraph.getText().matches("^Prasun-Texte von [0-9]{4}$")) {
