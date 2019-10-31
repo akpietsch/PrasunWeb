@@ -17,7 +17,15 @@
 </head>
 
 <body>
-	<div th:each="work : ${page.content}">
+	<h1 th:text="${section.getTitle().getContent()}"></h1>
+	<p th:each="sentence : ${section.getSentences()}" th:text="${sentence.getContent()}"></p>
+	
+	<div th:each="translation : ${section.getSections()}">
+		<h1 th:text="${translation.getTitle().getContent()}"></h1>
+		<p th:each="sentence : ${translation.getSentences()}" th:text="${sentence.getContent()}"></p>
+	</div>
+	
+<!--	
 		<p th:text=${work.author}></p>
 		<p th:text=${work.glossary}></p>
 		<div th:each="section : ${work.sections}">
@@ -28,6 +36,7 @@
 			<p th:text="${sentence.content}" th:each="sentence : ${section.sentences}"></p>
 		</div>
 	</div>
+-->
 </body>
 
 </html>

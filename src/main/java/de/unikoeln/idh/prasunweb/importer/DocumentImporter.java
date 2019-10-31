@@ -59,8 +59,9 @@ public class DocumentImporter {
 
 			for (Entry<String, List<List<XWPFParagraph>>> bookTexts : this.getBookTexts().entrySet()) {
 				Work work = new Work();
-				work.setTitle(bookTexts.getKey());
-
+				List<Section> sectionsGerman = new ArrayList<Section>();
+				List<Section> sectionsPrasun = new ArrayList<Section>();
+				
 				for (List<XWPFParagraph> text : bookTexts.getValue()) {
 					Section section = new Section();
 
@@ -83,10 +84,26 @@ public class DocumentImporter {
 							}
 						}
 					}
+					
+					switch (section.getLocale()) {
+					case "deu":
+						sectionsGerman.add(section);
+						break;
 
-					work.addSections(section);
+					case "prn":
+						sectionsPrasun.add(section);
+						break;
+					}
+				}
+				
+				for (int i = 0; i < sectionsGerman.size() || i < sectionsPrasun.size(); i++) {
+					sectionsGerman.get(i).getSections().add(sectionsPrasun.get(i));
+					sectionsPrasun.get(i).getSections().add(sectionsGerman.get(i));
 				}
 
+				work.addSections(sectionsGerman.toArray(new Section[sectionsGerman.size()]));
+				work.addSections(sectionsPrasun.toArray(new Section[sectionsPrasun.size()]));
+				work.setTitle(bookTexts.getKey());
 				this.works.save(work);
 			}
 

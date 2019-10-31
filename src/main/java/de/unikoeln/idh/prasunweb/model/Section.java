@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -40,6 +42,10 @@ public class Section implements Serializable {
 
 	// ISO 639-3 Language Code "prn" "deu"
 	private String locale;
+
+	@ManyToMany()
+	@JoinTable()
+	private List<Section> sections = new ArrayList<Section>();
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Sentence title;
