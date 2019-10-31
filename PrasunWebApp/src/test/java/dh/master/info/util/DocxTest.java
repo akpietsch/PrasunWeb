@@ -22,7 +22,6 @@ public class DocxTest {
 		ZipSecureFile.setMinInflateRatio(0);
 		List<String> paragraphs = new ArrayList<>();
 
-		// Text 2 Disnis Gang zum Eisgeist.docx
 		try (XWPFDocument xdoc = new XWPFDocument(new FileInputStream(this.source))) {
 			new ArrayList<XWPFTable>(xdoc.getTables()).forEach(table -> {
 				xdoc.removeBodyElement(xdoc.getPosOfTable(table));
@@ -31,29 +30,11 @@ public class DocxTest {
 			List<XWPFParagraph> main = xdoc	.getParagraphs()
 											.stream()
 											.filter(p -> p.getText().matches("^Prasun-Texte von [0-9]{4}$"))
+											.filter(p -> p.getText().matches("^/s*$"))
 											.collect(Collectors.toList());
 			main.forEach(p -> System.out.println(p.getParagraphText()));
 
 			
-			
-			for (XWPFParagraph name : main) {
-				System.out.println(name.getParagraphText());
-			}
-
-//			xdoc.getParagraphs().forEach(paragraph -> {
-//				if (paragraph.getText().matches("^Prasun-Texte von [0-9]{4}$")) {
-//					System.out.println(paragraph.getText());					
-//				}
-//				System.exit(0);
-
-//				for (int i = 0; i < paragraph.getRuns().size(); i++) {
-//					paragraph.removeRun(0);
-//					String sentence = paragraph.getText().trim();
-//					System.out.println(sentence);
-//					paragraphs.add(sentence);
-//				}
-
-//			});
 
 		} catch (Exception e) {
 			e.printStackTrace();
