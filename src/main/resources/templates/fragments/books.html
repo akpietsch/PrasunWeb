@@ -1,0 +1,323 @@
+<th:block th:fragment="book(item, sections)">
+	<table class="table table-borderless">
+		<tr th:each="section : ${sections.getContent()}">
+			<td><a
+				th:href="${'/section/' + section.getId()}"
+				th:text="${section.getTitle().getContent()}" /></td>
+		</tr>
+	</table>
+</th:block>
+
+<th:block th:fragment="1956">
+	<h1>Buch 1956</h1>
+	<span class=lead>
+		<p>Die Reise von Georg Buddruss (GB) ins Prasun-Tal im Jahr 1956
+			war ein Teilunternehmen der Deutschen Hindukusch-Expedition 1955/56.
+			Leiter des von der Deutschen Forschungsgemeinschaft finanzierten
+			Projekts war der Mainzer Ethnologe Prof. Adolf Friedrich (1914 -
+			1956), Teilnehmer waren die Ethnologen Dr. Karl Jettmar (1918-2002),
+			der Doktorand Peter Snoy (1928-2012) und GB als
+			Sprachwissenschaftler. Das Ziel der Expedition waren
+			ethnologisch-linguistische Studien im Großraum zwischen Baltistan und
+			Chitral im pakistanischen Hindukusch.</p>
+		<p>Im Laufe der Arbeiten 1955 stellte sich heraus, dass
+			Unternehmen in Ost-Afghanistan wünschenswert wären. Besonders GB
+			hielt das für wichtig. Er bat um die Zustimmung des
+			Expeditionsleiters, die dieser nach vielen Bedenken gab. Friedrich
+			und Snoy verbrachten den Winter 1955/56 bei den Kalash in Chitral,
+			Jettmar und GB gingen nach Kabul. Jettmar erkrankte und konnte die
+			Reise nicht fortsetzen. GB verbrachte den Winter im Kunar-Tal und
+			einigen Seitentälern und trieb linguistische Feldstudien (zur Sprache
+			von Woṭapur und Sau, zum Tregami, zur Sprache von Wama und
+			verschiedenen Pašai-Dialekten). Dabei war es immer sein Wunsch, nach
+			Prasun (Kati přasü̃, Persisch parun, Prasun wasi) ins obere Pech-Tal
+			zu gehen.</p>
+		<p>Prof. Georg Morgenstierne, Oslo, hatte GB 1955 brieflich auf
+			diese Sprache aufmerksam gemacht und angeregt, GB möge Morgenstiernes
+			Arbeit (Morgenstierne 1949) überprüfen und ergänzen. Morgenstierne
+			(GM) schrieb (1949, §2),</p>
+		<blockquote class="blockquote">
+			<p class="mb-4">„The following, unfortunately very incomplete,
+				account of Prasun is based upon information furnished by three
+				natives of the Prasun valley. The extremely limited time at my
+				disposal and the intellectual and linguistic shortcomings of my
+				informants may perhaps to some extent excuse the mistakes no doubt
+				to be found in my description. In ordinary circumstances my material
+				ought probably to have been scrapped altogether. But the many
+				interesting features of this very little known language have induced
+				me to publish an analysis of my material. It is much to be hoped
+				that a competent scholar will, before it is too late, find an
+				opportunity of making a thorough study of the complex structure of
+				Prasun.”</p>
+		</blockquote>
+		<p>Morgenstiernes Bescheidenheit ehrt den großen Gelehrten, aber
+			ist in hohem Maße übertrieben. Seine Prasun-Arbeit ist von bleibendem
+			Wert, auch wenn GB versucht hat, einzelne Lücken zu schließen. GB
+			hatte es viel leichter als GM, der nie das Prasun-Tal besuchen
+			konnte, sondern mit seinen Gewährsleuten in Kabul und Chitral
+			arbeiten musste. Am wichtigsten ist, dass GM es unternommen hat, eine
+			historische Lautlehre für das Prasun in Umrissen zu entwerfen. Auf
+			diesem Gebiet sind wir auch in diesem Buch trotz beträchtlichen
+			Mengen an neuem Material nicht weitergekommen.</p>
+		<p>Der Weg nach Prasun galt 1956 als schwierig, nicht nur wegen
+			der Lawinengefahr. Außer der Einwilligung des Expeditionsleiters
+			musste auch die Erlaubnis der Regierung in Kabul beschafft werden.
+			Das war dadurch erschwert, dass den Mitarbeitern der Behörde der Name
+			Prasun/ Parun unbekannt war und die Existenz des Gebietes auf
+			afghanischem Boden erst durch alte Landkarten nachgewiesen werden
+			musste.</p>
+		<p>Am 26.2.56 traf GB, aus dem Pashai-Gebiet kommend, in Kabul
+			ein. Am 5.3.56 erhielt er mit Hilfe der deuschen Gesandtschaft die
+			Erlaubnis des Innenministeriums. Am 7.3.56 erfolgte der Aufbruch von
+			Kabul nach Chigha Sarai (heute: Asadabad).</p>
+		<p>Wegen des Frühlingsregens konnte GB von dort erst am 17.3.
+			aufbrechen. Im Untertal zu Pferde, später zu Fuß zog die kleine
+			Karawane mit sechs Trägern das Pech-Tal talauf. Von einem
+			Bezirksbeamten (ilāqadār) war GB ein „Oberschreiber“ (sar-kātib),
+			dessen Begleiter sowie ein mit einem Stock bewaffneter Soldat
+			mitgegeben worden, angeblich zur Sicherheit des Forschungsreisenden.
+			Die beiden Beamten wurden durch ständige Klagen über Weg und Wetter
+			und über die Strapazen der Wanderung - „alles wegen einer Sprache,
+			die niemand versteht“ – und durch abfällige Bemerkungen über
+			entgegenkommende „wilde“ (ǰangalī) Nuristanis bald zur Belastung.
+			Einer der beiden schlug vor, die Deutschen sollten lieber Deutschland
+			von den amerikanischen und russischen Besatzern befreien, statt für
+			unnütze Abenteuer Geld zu verschwenden.</p>
+		<p>Nach mancherlei Schwierigkeiten traf GB am 23.3.56 im mit ca.
+			100 Häusern größten und südlichsten Prasun-Dorf Paṣki ein. Die Namen
+			der sechs Dörfer von Prasun sind in mehreren Varianten überliefert,
+			die in Morgenstierne 1949, 191f. zusammengestellt und diskutiert
+			werden. Wir benutzen für die Abkürzungen in Text und Glossar ein
+			System, das auch von G. Fussman (1972, 20) zu finden ist, das aber
+			von dem von Morgenstierne (1949) abweicht. So kürzte GM Paṣki als U.
+			ab, abgeleitet aus t-uṣüt „in Paṣki“. Aber das Dorf heißt nicht Uṣüt,
+			sondern Wuṣüt, dessen Anlaut nach der Präposition t- regelmäßig
+			schwindet. In diesem Buch wird stattdessen die Kati-Form Paṣki (P.)
+			benutzt.</p>
+		<p>Das zweite Dorf von Süden aus ist Zumu (Z.) mit ca. 20-30
+			Häusern. In verschiedenen Aufzeichnungen anderer Reisender wird der
+			Kati-Name Təċem (und ähnliches) angegeben, für Prasun t-uzmū „in
+			Zumu“. Das 3. Dorf (K.) heißt auf Kati Kuštéki, K(u)štöki mit vielen
+			Varianten, es enthielt 1956 etwa 40-50 Häuser. Bei Elphinstone wird
+			es als „Hauptstadt“ von Prasun bezeichnet: „Puroonee whose capital is
+			Kushtokee“, und bei Robertson als „undoubtedly the most sacred
+			village in the whole of Káfiristán.“ Bis 1896 stand hier der berühmte
+			Mara-Tempel. Der Prasun-Name ist Wušüt (Morgenstierne Ušüt), richtig
+			Lentz t-ušüt „in Wušüt“.</p>
+		<p>Das 4. Dorf (D.) heißt auf Prasun (W)üċǖ, auf Kati Diwá,
+			Persisch Dēwá. Der Weg von Paṣki nach Dewa beträgt rund vier
+			Stunden, GB zählte 1956 vierzig Häuser. Das 5. Dorf (Pr.), mit ca.
+			40-50 Häusern, heißt auf Prasun Sēč, der Kati-Name ist Pronj (mit
+			mehreren Varianten). Das nördlichste Dorf (I.) heißt auf Prasun Ṣupū
+			(Lentz Ṣopu), auf Kati (und Persisch) Ištewī/ Iṣṭewi/ Štiwe, mit
+			vielen Varianten. Das Dorf liegt auf der Talsohle und ist
+			festungsartig von einer Lehmmauer umgeben.</p>
+		<p>Die Ankunft der kleinen Gruppe in Paṣki war vorher durch einen
+			Boten gemeldet worden. Der Empfang war sehr kühl. Der Malik des
+			Dorfes, Abdur Rahim, drängte GB auf Persisch: „Sage mir schnell die
+			Wörter, die du aus unserer Sprache wissen willst. Die sage ich dir,
+			morgen kannst du dann Paṣki wieder verlassen.“ Als GB andeutete,
+			länger bleiben zu wollen, bat er ihn, wenigstens die beiden Begleiter
+			heimzuschicken, was GB nur zu gern tat. Der Soldat blieb bei GB und
+			machte sich nützlich durch Hilfsarbeiten wie Holz- und Wasserholen
+			und andere Dienste. Das Verhältnis zu Abdur Rahim besserte sich bald.
+			Schon der dänische Botaniker Lennart Edelberg, der kurz vor GB in
+			Paṣki war, sagt von ihm:
+		<p>„(the malik) is active, agile, artistic, intelligent, ...“ Für
+			die sprachliche Arbeit waren seine Eigenschaften weniger günstig. Wie
+			GM, so war auch GB überzeugt, nur durch Aufnahme möglichst vieler
+			Texte die komplizierte Grammatik, besonders das Verbalsystem,
+			analysieren zu können.</p>
+		<p>Die Textaufnahme mit einem Tonbandgerät erwies sich bei allen
+			Informanten als nachteilig, das Diktieren von Texten erwies sich für
+			beide Teile, den Erzähler und den Linguisten, als günstiger, und
+			deshalb erfolgte die bewusste Rückkehr zu älteren Methoden der
+			Feldforschung. Abdur Rahim war ungeduldig und nervös, nicht nur bei
+			Tonaufnahmen, sondern auch beim langsamen Diktieren. Ihm verdanken
+			wir aber wichtige Texte zur vorislamischen Religion (Nr. 2, 3, 21,
+			24, 32), die er laut eigenen Angaben von seiner Großmutter gelernt
+			hatte. Die Arbeit war schwierig und erforderte viel Geduld. Immer
+			wieder forderte Abdur Rahim GB auf, schneller zu schreiben und bei
+			der nachprüfenden Lektüre des Geschriebenen nicht so viele Fragen zu
+			stellen, mit denen „du mir das Gehirn kaputt machst (damāγ xarāb
+			mēkunī).“</p>
+		<p>Leichter war die Arbeit mit dem etwa 40jährigen Durmat. Er
+			sprach langsam und deutlich und wiederholte geduldig. Er erzählte,
+			seine Frau kenne viele Erzählungen (aber keine Geschichten von
+			Göttern). Durmat war der einzige, der GB in sein Haus einlud, um
+			seine Frau zu sehen und mit Schmerztabletten zu behandeln. Für seine
+			medizinischen Bemühungen wurde GB jedesmal mit der Erzählung eines
+			Textes belohnt und bekam so wenigstens einen Eindruck vom Erzählgut
+			der Prasun-Frauen.</p>
+		<p>Ein schlechtes Gewissen, dass er Medikamente gegen Texte
+			tauschte, durfte GB nicht haben. Die Expeditionsteilnehmer hatten von
+			deutschen Pharma-Firmen Spenden von Medikamenten erhalten
+			(Analgetica, Wundsalben, Antibiotikaspritzen, Augentropfen etc.), mit
+			der Bitte, später zu berichten, wie diese Mittel bei Menschen in
+			großer Höhe ohne vorherigen Kontakt mit westlicher Medizin wirkten
+			(vgl. Text 95). GBs laienhafte medizinische Erfolge machten ihn
+			bekannter als seine allmählich wachsenden Sprachkenntnisse.</p>
+		<p>Durmat machte ihn darauf aufmerksam, dass die Schmiede, die GB
+			auch befragte, manche falschen Angaben gemacht hätten. Unter den
+			Schmieden waren der 10jährige muntere und intelligente Rasul Khan und
+			seine Verwandten Faqir Mohammad und Sher Muhammad (II). Eine
+			Überprüfung ergab, dass die Schmiede zu Hause Kati sprachen, aber in
+			Prasun geboren und aufgewachsen waren und fließend Prasun sprachen.
+			Die „Fehler“, die Durmat bemerkt haben wollte, bestanden darin, dass
+			sie als Handwerker in ganz Prasun umherwanderten und arbeiteten und
+			in den Paṣki-Dialekt manchmal Formen des Obertals einmischten.GB
+			merkte das, wo es angebracht war, in Fußnoten an, was relativ selten
+			nötig war. Rasul Khan diente GB auch als „Dolmetscher“, der die
+			Erzählung eines jungen Mannes aus Pronj, Mohammad Hashim, in den
+			Paṣki-Dialekt übersetzte (Text 38). Weitere namentlich bekannte
+			Mitarbeiter waren Sher Mohammad, dessen mangelnde Persischkenntnisse
+			und undeutliche Aussprache die Arbeit erschwerten, und Abdul Manan.</p>
+		<p>Über den Dialekt von I. war bis dahin nichts bekannt, weil GM
+			keinen Informanten aus I. hatte. Die Wanderung über Pr. durch eine
+			paradiesische Frühlingslandschaft nach I. war ein wunderbares
+			Erlebnis. GB wanderte zusammen mit einem Helfer aus Wama und erfuhr
+			von diesem unterwegs die Namen vieler Pflanzen auf Prasun und Wamai.
+			GB sammelte die Pflanzen in einem Herbar, um sie später in
+			Deutschland botanisch bestimmen zu lassen. Leider ging die Sammlung
+			auf dem Rückweg ins mittlere Peč-Tal durch die Unachtsamkeit eines
+			Trägers verloren, so dass viele der im Glossar dieses Werkes
+			genannten Pflanzennamen ohne botanische Zuordnung blieben.</p>
+		<p>Am 29.4.56 traf GB in I. ein, wo er freundlich begrüßt wurde.
+			Das Wiedersehen mit Zaman Khan war beinahe freundschaftlich. Zaman
+			Khan war der einzige als „Intellektueller“ zu bezeichnende
+			Prasun-Sprecher und sprach auch gut Persisch. Er trug an GB den
+			Wunsch heran, für seine Muttersprache eine Schrift zu schaffen, von
+			der er sich eine „fortschrittliche“ Entwicklung seiner Landsleute
+			versprach. Grundlage der Verschriftlichung sollte selbstverständlich
+			die arabische Schrift sein. GB erkärte ihm, das man dazu viel Zeit
+			brauchen würde.</p>
+		<p>Zur Förderung der Entwicklung der Prasun-Bewohner unternahm
+			Zaman Khan auch, in der Form einer Art Ghazal einen islamischen
+			Katechismus zu dichten (Text 76). Zur Textsammlung dieses Buches
+			steuerte Zaman Khan auch einige bei ihm beliebte moralisierende
+			Erzählungen bei (Text 88, 89, 91- 93).</p>
+		<p>Im August 1973 führte Richard Strand in I. ein wertvolles auf
+			Kamviri geführtes Gespräch mit Zaman Khan. Strand nennt Zaman Khan
+			„the leader of the pazg'am Clan, the former keepers of the creator
+			god m'ârâ in pre-Islamic times.” Auf sprachliche Themen wurde
+			anscheinend bewusst verzichtet. Mit dem freundlichen älteren Malik
+			Jan Mohammad machte GB Wanderungen in dem Gebiet nördlich von I. Er
+			erzählte Begebenheiten aus der lokalen Geschichte, z. B. über den
+			Kampf der Wasi gegen den Mehtar von Chitral (Text 90), und zeigte
+			Stätten alter Heiligtümer.</p>
+		<p>Von ihm stammt ein Bericht über die Einwanderung der Prasun aus
+			Maka (Text 94). Jan Mohammad bat GB, dessen Macht sehr überschätzend,
+			sich beim König in Kabul für Soldaten aus Prasun einzusetzen, die
+			sehr an Heimweh litten und unter denen es überdurchschnittlich viele
+			Fahnenflüchtige und Todesfälle gebe. Jan Mohammad war es, der GB
+			eindringlich bat, noch einmal nach Prasun zu kommen.</p>
+		<p>Ein weiterer Erzähler war sein Halbbruder Abdur Razaq, der fast
+			zahnlos war, der aber mit Hilfe anderer Helfer wertvolles Material
+			beisteuerte, so einen Text über die Entstehung der Mondphasen (Text
+			81).</p>
+		<p>Die letzten in I. aufgezeichneten Texte stammen von dem Sänger
+			Gul Jan, der ein reiches Repertoire von Liedern in „Göttersprache“
+			(Text 96, 97) zu haben schien, außerdem den Prosatext 98 beisteuerte.</p>
+		<p>Am 14.5.56 brach GB von I. auf. In Z. traf er den Mulla Nur
+			Mohammad, der erzählte, er habe inzwischen (seit Text 61) viele alte
+			Göttergeschichten in seinem Gedächtnis gesammelt und GB Proben auf
+			persisch gab. Leider war das Visum abgelaufen. GB konnte in Eile nur
+			noch zwei Texte aufschreiben.</p>
+		<p>Die Erzählung von Bumali (Text 100, besonders Abschnitt 96ff.)
+			zeigt, dass Māra (auch) als Sonnengott gesehen wurde. GB hoffte, auf
+			der zweiten geplanten Reise mehr von Nur Mohammad zu erfahren. Aber
+			wie er 1970 erfuhr, war dieser war bald nach GBs Abreise verstorben.</p>
+		<p>Am 17.5.56 brach GB von Paṣki auf und traf nach anstrengenden
+			Märschen bis Chigha Sarai am 23. Mai in Kabul ein. Auf der deutschen
+			Gesandtschaft erfuhr er vom Tode seines Expeditionsleiters Adolf
+			Friedrich bereits einen Monat vorher, am 25.4.1956. Nach längerer
+			Wartezeit, u. a. in Mohenjo Daro, fuhren Peter Snoy und GB
+			schließlich am 2.8.56 mit dem Schiff von Karachi ab.</p>
+	</span>
+</th:block>
+
+<th:block th:fragment="1970">
+	<h1>Buch 1970</h1>
+	<span class=lead>
+		<p>Die zweite Reise nach Prasun unternahm GB zusammen mit dem
+			Anthropologen Prof. Wolfram Bernhard. Am 27.7.1970 trafen die beiden
+			in Paṣki ein. Es wurde ein Zeltplatz am oberen Ende des Dorfes (ca.
+			2570m hoch) gefunden. Hier lernte GB einen jungen Mann von etwa 30
+			Jahren kennen, mit Namen Fazal. Er machte den Eindruck, ruhig und
+			intelligent auf Fragen nach der Prasun-Sprache zu antworten. Er war
+			in Kabul zwei Jahre beim Militär gewesen und verstand gut Persisch.
+			Es gelang GB, Fazal (F.) gegen gute Bezahlung zur Zusammenarbeit zu
+			gewinnen und ein festes Arbeitsverhältnis zu begründen.</p>
+		<p>Die Aufnahme bei den Dörflern war freundlich, viele erkannten
+			GB wieder und erinnerten sich an Begegnungen von 1956. Fazal und GB
+			begannen sofort, eine Frageliste durchzugehen, die GB aus Materialien
+			von 1956 angelegt hatte. Zahlreiche Korrekturen ergaben sich. Fazal
+			hielt durch, auch wenn er schnell ermüdete, zu gähnen begann und nach
+			wenigen Tagen behauptete, der Dienst beim Militär sei leichter
+			gewesen als die Spracharbeit mit GB. GB musste die leichte
+			Ermüdbarkeit seines Mitarbeiters hinnehmen und darauf achten, den
+			geistige Arbeit nicht gewohnten jungen Mann nicht zu überfordern.</p>
+		<p>Ab 6.8.1970 brachen W. Bernhard und GB ins Obertal auf. Fazal
+			blieb immer in der Nähe von GB und beantwortete Fragen. In I. wurden
+			viele Materialien der Sammlungen von 1956 überprüft. Vieles wurde
+			korrigiert, neues Material kam hinzu. I. ist der schwierigste und am
+			wenigsten bekannte Dialekt des Prasun. GM kannte den Dialekt gar
+			nicht. Es war deshalb zu überlegen, länger in I. zu bleiben und den
+			Vergleich der Dialekte von I. und P. mit Hilfe Fazals zu vertiefen.
+			Mit Malik Jan Mohammad durchwanderte GB die Plätze des Kampfes mit
+			der Truppe aus Chitral (Text 90), ferner wurde ein Text über das
+			münd-System aufgenommen (A1).</p>
+		<p>Am 12.8.70 wurde die Arbeit in I. abgebrochen, denn Fazal
+			behauptete, aus persönlichen Gründen nach P. zurückkehren zu müssen.
+			So wurde beschlossen, den Schwerpunkt der Studien nach P. zu
+			verlegen. Das war nicht sinnlos, da der Dialekt von P. der
+			altertümlichste und morphologisch am besten zu durchschauende ist,
+			wie schon GM erkannte. Auf dem Rückweg wurde ein Tag in Pronj
+			verbracht. Hier lernte GB den jungen Abdul Wahid kennen. Ihn befragte
+			GB nach Eigenheiten des Dialekts von Pr. Er war ein ausgezeichneter
+			Informant, mit dem GB gern länger gearbeitet hätte. Er antwortete
+			schnell und präzise, machte sogar selbständig auf Minimalpaare
+			aufmerksam. Leider musste er am nächsten Morgen früh zum
+			Militärdienst nach Kabul aufbrechen.</p>
+		<p>In Dewa wurden auf dem Rückweg nach P. Materialien von 1956
+			überprüft und neue Beispiele für die Stellung dieses Dialekts
+			gesammelt. Die nächsten Dialektstudien waren in Kštöki mit einem
+			jungen Informanten namens Abdul Ghafur, ein Soldat auf Urlaub. In
+			Kstöki wurden GB und Bernhard von dem Dorf zum Essen eingeladen. Am
+			16.8.70 kehrte GB nach Paṣki zurück. W. Bernhard machte mit
+			Informanten einen Rorschach-Test, bei dem GB als Dolmetscher diente.
+			Bei der Deutung von Klecksogrammen spielten Yuṣ-Motive eine
+			auffallende Rolle.</p>
+		<p>W. Bernhard brach am 19.8. nach Kantiwa auf, GBs Arbeiten und
+			Versuche zum Verbalsystem von Paṣki, auch zum Dialekt von Z., liefen
+			bis Ende August. Die nächste Aufgabe war das Sammeln ethnographischer
+			Sachtexte. F. sollte zu Themen, die GB ihm stellte, frei erzählen,
+			was ihm einfiel, z. B. über die Institution der wurī (Text A2), über
+			Dorfgliederung und Dorfämter (A3-A5), zum Kalender im Winter und
+			Sommer (A6, A7), über Wettspiele (A8), rituelles Säen (A9) etc.
+			Textgruppe B handelt von Alm- und Milchwirtschaft, von Namen und
+			Farben von Haustieren, Textgruppe C enthält Informationen über
+			Speisen und ihre Bezeichnungen, über Krankheiten und Volksmedizin,
+			Textgruppe D besteht aus Vermischtem aus zufällig mitgehörten
+			Gesprächen.</p>
+		<p>Am 5.9.70 machte GB Beobachtungen zum beginnenden Schulbetrieb.
+			Die Schüler lasen Texte auf Pashto, verstanden aber kaum etwas davon.
+			Der Lehrer, selbst Pashtune, verstand die Sprache seiner Schüler
+			nicht, sie wiederum nicht die seine. Die letzte Arbeit in P. war die
+			Aufzeichnung eines langen Māndi-Mythos (Text A10), erzählt von Fazals
+			altem Vater Qamar Din mit gelegentlicher Hilfe seines Sohnes. Die
+			Prasun-Reise 1970 erbrachte viel Material, aber einige Details
+			blieben unklar. GB spürte am Schluss, dass es genug Gründe für eine
+			3. Reise gäbe.</p>
+		<p>Am 12.9.79 brach GB von Paṣki auf und wanderte über Wama, wo
+			eine schreckliche Cholera-Epidemie herrschte, und Cepregal nach Qala.
+			Hier traf GB einen Sprecher des Dorfes Gṛangal (Goŋgal), wo eine
+			bisher unbekannte Sprache gesprochen wurde, die nordwestlichen
+			Pashai-Dialekten nahesteht. Am 16.9. arbeitete GB mit Hilfe eines
+			alten Sprechers an einer Skizze dieser Sprache. Am 18.9.70 wurde GB
+			von Frau Wilfriede Snoy aus Kabul von der Außenstelle des
+			Südasieninstituts der dortige Landrover entgegengeschickt, der GB die
+			140km nach Kabul brachte. Am 29.9.1970 kehrte er nach Deutschland
+			zurück.</p>
+	</span>
+</th:block>

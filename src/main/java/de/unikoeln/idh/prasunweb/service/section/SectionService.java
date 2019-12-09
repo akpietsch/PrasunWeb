@@ -5,18 +5,23 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import de.unikoeln.idh.prasunweb.model.Book;
 import de.unikoeln.idh.prasunweb.model.Section;
 
 public interface SectionService {
 
-	public Long count();
+    public List<Section> getAll();
 
-	public Section save(Section section);
+    public Page<Section> getAll(Pageable pageable);
 
-	public Section getOneById(Integer sectionId);
+    public Page<Section> getAllByBookAndLocale(Pageable pageable, Book book, String locale);
 
-	public List<Section> getAll();
+    public Section getOneById(Integer sectionId);
 
-	public Page<Section> getAll(Pageable pageable);
+    public Section save(Section section);
+
+    public Long count();
+
+    public boolean existsById(Integer sectionId);
 
 }

@@ -5,17 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("")
-public class IndexController {
+@RequestMapping("/error")
+public class ErrorController {
 
     @GetMapping("")
-    public String index() {
-        return "redirect:/home";
-    }
-
-    @GetMapping("/home")
-    public String getHomePage() {
-        return "home";
+    public String getErrorPage() {
+        return "error";
     }
 
 }

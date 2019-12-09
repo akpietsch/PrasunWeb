@@ -21,212 +21,217 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import de.unikoeln.idh.prasunweb.model.Book;
 import de.unikoeln.idh.prasunweb.model.Footnote;
 import de.unikoeln.idh.prasunweb.model.Section;
 import de.unikoeln.idh.prasunweb.model.Sentence;
-import de.unikoeln.idh.prasunweb.model.Work;
-import de.unikoeln.idh.prasunweb.service.work.WorkService;
+import de.unikoeln.idh.prasunweb.service.book.BookService;
 
 @Component
+@Transactional
 public class DocumentImporter {
 
-	@Autowired
-	private Environment env;
+    @Autowired
+    private Environment env;
 
-	private XWPFDocument document;
+    @Autowired
+    private BookService books;
 
-	private Logger logger = LoggerFactory.getLogger(DocumentImporter.class);
+    private XWPFDocument document;
 
-	private final String footnote = "\\[footnoteRef:([0-9]+)\\]";
+    private Logger logger = LoggerFactory.getLogger(DocumentImporter.class);
 
-	private final String splitter = " ?[0-9]+\\. ?";
+    private final String footnote = "\\[footnoteRef:([0-9]+)\\]";
 
-	private final String start = "^Prasun-Texte von [0-9]{4}$";
+    private final String splitter = " ?[0-9]+\\. ?";
 
-	private final String stop = "^\n$";
+    private final String start = "^Prasun-Texte von [0-9]{4}$";
 
-	@Autowired
-	private WorkService works;
+    private final String stop = "^\n$";
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void executeImporter() {
-		boolean parse = this.env.getProperty("prasunweb.data.parse", Boolean.class);
-		File source = new File(env.getProperty("prasunweb.data.source"));
+    @EventListener(ApplicationReadyEvent.class)
+    public void executeImporter() {
+        boolean parse = this.env.getProperty("prasunweb.data.parse", Boolean.class);
+        File source = new File(env.getProperty("prasunweb.data.source"));
 
-		if (parse && source.exists()) {
-			this.logger.info("Starting document import from " + source.getAbsolutePath());
+        if (parse && source.exists()) {
+            this.logger.info("Starting document import from " + source.getAbsolutePath());
 
-			for (Entry<String, List<List<XWPFParagraph>>> bookTexts : this.getBookTexts().entrySet()) {
-				Work work = new Work();
-				List<Section> sectionsGerman = new ArrayList<Section>();
-				List<Section> sectionsPrasun = new ArrayList<Section>();
-				
-				for (List<XWPFParagraph> text : bookTexts.getValue()) {
-					Section section = new Section();
+            for (Entry<String, List<List<XWPFParagraph>>> bookTexts : this.getBookTexts().entrySet()) {
+                Book book = new Book();
+                List<Section> sectionsGerman = new ArrayList<Section>();
+                List<Section> sectionsPrasun = new ArrayList<Section>();
 
-					for (XWPFParagraph paragraph : text) {
-						for (Sentence sentence : this.getSentences(paragraph)) {
-							if (section.getTitle() == null) {
-								section.setTitle(sentence);
+                for (List<XWPFParagraph> text : bookTexts.getValue()) {
+                    Section section = new Section();
 
-								switch (paragraph.getStyleID()) {
-								case "german-head":
-									section.setLocale("deu");
-									break;
+                    for (XWPFParagraph paragraph : text) {
+                        for (Sentence sentence : this.getSentences(paragraph)) {
+                            if (section.getTitle() == null) {
+                                section.setTitle(sentence);
 
-								case "prasun-head":
-									section.setLocale("prn");
-									break;
-								}
-							} else {
-								section.addSentences(sentence);
-							}
-						}
-					}
-					
-					switch (section.getLocale()) {
-					case "deu":
-						sectionsGerman.add(section);
-						break;
+                                switch (paragraph.getStyleID()) {
+                                case "german-head":
+                                    section.setLocale("deu");
+                                    break;
 
-					case "prn":
-						sectionsPrasun.add(section);
-						break;
-					}
-				}
-				
-				for (int i = 0; i < sectionsGerman.size() || i < sectionsPrasun.size(); i++) {
-					sectionsGerman.get(i).getSections().add(sectionsPrasun.get(i));
-					sectionsPrasun.get(i).getSections().add(sectionsGerman.get(i));
-				}
+                                case "prasun-head":
+                                    section.setLocale("prn");
+                                    break;
+                                }
+                            } else {
+                                section.addSentences(sentence);
+                            }
+                        }
+                    }
 
-				work.addSections(sectionsGerman.toArray(new Section[sectionsGerman.size()]));
-				work.addSections(sectionsPrasun.toArray(new Section[sectionsPrasun.size()]));
-				work.setTitle(bookTexts.getKey());
-				this.works.save(work);
-			}
+                    switch (section.getLocale()) {
+                    case "deu":
+                        sectionsGerman.add(section);
+                        break;
 
-			this.logger.info("Completed document import");
-		}
-	}
+                    case "prn":
+                        sectionsPrasun.add(section);
+                        break;
+                    }
+                }
 
-	private XWPFDocument getDocument() {
-		if (this.document == null) {
-			ZipSecureFile.setMinInflateRatio(0);
-			String source = env.getProperty("prasunweb.data.source");
+                for (int i = 0; i < sectionsGerman.size() || i < sectionsPrasun.size(); i++) {
+                    sectionsGerman.get(i).getSections().add(sectionsPrasun.get(i));
+                    sectionsPrasun.get(i).getSections().add(sectionsGerman.get(i));
+                }
 
-			try (XWPFDocument docx = new XWPFDocument(new FileInputStream(source))) {
-				this.document = docx;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+                book.addSections(sectionsGerman.toArray(new Section[sectionsGerman.size()]));
+                book.addSections(sectionsPrasun.toArray(new Section[sectionsPrasun.size()]));
+                book.setTitle(bookTexts.getKey());
+                this.books.save(book);
+            }
 
-		return this.document;
-	}
+            this.logger.info("Completed document import");
+        }
+    }
 
-	private Map<String, List<XWPFParagraph>> getBooks() {
-		Map<String, List<XWPFParagraph>> books = new HashMap<String, List<XWPFParagraph>>();
-		List<XWPFParagraph> paragraphs = this.getDocument().getParagraphs();
+    private XWPFDocument getDocument() {
+        if (this.document == null) {
+            ZipSecureFile.setMinInflateRatio(0);
+            String source = env.getProperty("prasunweb.data.source");
 
-		for (int i = 0; i < paragraphs.size(); i++) {
-			String text = paragraphs.get(i).getParagraphText().trim();
+            try (XWPFDocument docx = new XWPFDocument(new FileInputStream(source))) {
+                this.document = docx;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-			if (text.matches(this.start)) {
-				List<XWPFParagraph> book = new ArrayList<XWPFParagraph>();
+        return this.document;
+    }
 
-				while (!paragraphs.get(++i).getParagraphText().matches(this.stop)) {
-					book.add(paragraphs.get(i));
-				}
+    private Map<String, List<XWPFParagraph>> getBooks() {
+        Map<String, List<XWPFParagraph>> books = new HashMap<String, List<XWPFParagraph>>();
+        List<XWPFParagraph> paragraphs = this.getDocument().getParagraphs();
 
-				books.put(text, book);
-			}
-		}
+        for (int i = 0; i < paragraphs.size(); i++) {
+            String text = paragraphs.get(i).getParagraphText().trim();
 
-		return books;
-	}
+            if (text.matches(this.start)) {
+                List<XWPFParagraph> book = new ArrayList<XWPFParagraph>();
 
-	private Map<String, List<List<XWPFParagraph>>> getBookTexts() {
-		Map<String, List<List<XWPFParagraph>>> bookTexts = new HashMap<String, List<List<XWPFParagraph>>>();
+                while (!paragraphs.get(++i).getParagraphText().matches(this.stop)) {
+                    book.add(paragraphs.get(i));
+                }
 
-		for (Entry<String, List<XWPFParagraph>> book : this.getBooks().entrySet()) {
-			List<List<XWPFParagraph>> texts = new ArrayList<List<XWPFParagraph>>();
-			List<XWPFParagraph> textGerman = new ArrayList<XWPFParagraph>();
-			List<XWPFParagraph> textPrasun = new ArrayList<XWPFParagraph>();
+                books.put(text, book);
+            }
+        }
 
-			for (XWPFParagraph paragraph : book.getValue()) {
-				if (paragraph.getStyleID() != null) {
-					switch (paragraph.getStyleID()) {
-					case "german-head":
-						if (textGerman.size() > 0) {
-							texts.add(textGerman);
-							textGerman = new ArrayList<XWPFParagraph>();
-						}
+        return books;
+    }
 
-						textGerman.add(paragraph);
-						break;
+    private Map<String, List<List<XWPFParagraph>>> getBookTexts() {
+        Map<String, List<List<XWPFParagraph>>> bookTexts = new HashMap<String, List<List<XWPFParagraph>>>();
 
-					case "german-body":
-						textGerman.add(paragraph);
-						break;
+        for (Entry<String, List<XWPFParagraph>> book : this.getBooks().entrySet()) {
+            List<List<XWPFParagraph>> texts = new ArrayList<List<XWPFParagraph>>();
+            List<XWPFParagraph> textGerman = new ArrayList<XWPFParagraph>();
+            List<XWPFParagraph> textPrasun = new ArrayList<XWPFParagraph>();
 
-					case "prasun-head":
-						if (textPrasun.size() > 0) {
-							texts.add(textPrasun);
-							textPrasun = new ArrayList<XWPFParagraph>();
-						}
+            for (XWPFParagraph paragraph : book.getValue()) {
+                if (paragraph.getStyleID() != null) {
+                    switch (paragraph.getStyleID()) {
+                    case "german-head":
+                        if (textGerman.size() > 0) {
+                            texts.add(textGerman);
+                            textGerman = new ArrayList<XWPFParagraph>();
+                        }
 
-						textPrasun.add(paragraph);
-						break;
+                        textGerman.add(paragraph);
+                        break;
 
-					case "prasun-body":
-						textPrasun.add(paragraph);
-						break;
-					}
-				}
-			}
+                    case "german-body":
+                        textGerman.add(paragraph);
+                        break;
 
-			if (textGerman.size() > 0) {
-				texts.add(textGerman);
-			}
+                    case "prasun-head":
+                        if (textPrasun.size() > 0) {
+                            texts.add(textPrasun);
+                            textPrasun = new ArrayList<XWPFParagraph>();
+                        }
 
-			if (textPrasun.size() > 0) {
-				texts.add(textPrasun);
-			}
+                        textPrasun.add(paragraph);
+                        break;
 
-			bookTexts.put(book.getKey(), texts);
-		}
+                    case "prasun-body":
+                        textPrasun.add(paragraph);
+                        break;
+                    }
+                }
+            }
 
-		return bookTexts;
-	}
+            if (textGerman.size() > 0) {
+                texts.add(textGerman);
+            }
 
-	private List<Sentence> getSentences(XWPFParagraph paragraph) {
-		List<Sentence> sentences = new ArrayList<Sentence>();
+            if (textPrasun.size() > 0) {
+                texts.add(textPrasun);
+            }
 
-		for (String string : paragraph.getParagraphText().trim().split(this.splitter)) {
-			if (string.trim().length() > 0) {
-				Matcher matcher = Pattern.compile(this.footnote).matcher(string.trim());
-				Sentence sentence = new Sentence();
-				int zoffset = 0;
+            bookTexts.put(book.getKey(), texts);
+        }
 
-				while (matcher.find()) {
-					Footnote footnote = new Footnote();
-					footnote.setPostition(matcher.start() - zoffset);
-					footnote.setContent(
-							this.getDocument().getFootnoteByID(Integer.parseInt(matcher.group(1))).getParagraphs()
-									.stream().map(p -> p.getParagraphText().trim()).collect(Collectors.joining(" ")));
+        return bookTexts;
+    }
 
-					zoffset += matcher.end() - matcher.start();
-					sentence.addFootnote(footnote);
-				}
+    private List<Sentence> getSentences(XWPFParagraph paragraph) {
+        List<Sentence> sentences = new ArrayList<Sentence>();
 
-				sentence.setContent(string.trim().replaceAll(this.footnote, ""));
-				sentences.add(sentence);
-			}
-		}
+        for (String string : paragraph.getParagraphText().trim().split(this.splitter)) {
+            if (string.trim().length() > 0) {
+                Matcher matcher = Pattern.compile(this.footnote).matcher(string.trim());
+                Sentence sentence = new Sentence();
+                int zoffset = 0;
 
-		return sentences;
-	}
+                while (matcher.find()) {
+                    Footnote footnote = new Footnote();
+                    footnote.setPostition(matcher.start() - zoffset);
+                    footnote.setContent(this.getDocument()
+                                            .getFootnoteByID(Integer.parseInt(matcher.group(1)))
+                                            .getParagraphs()
+                                            .stream()
+                                            .map(p -> p.getParagraphText().trim())
+                                            .collect(Collectors.joining(" ")));
+
+                    zoffset += matcher.end() - matcher.start();
+                    sentence.addFootnote(footnote);
+                }
+
+                sentence.setContent(string.trim().replaceAll(this.footnote, ""));
+                sentences.add(sentence);
+            }
+        }
+
+        return sentences;
+    }
 
 }

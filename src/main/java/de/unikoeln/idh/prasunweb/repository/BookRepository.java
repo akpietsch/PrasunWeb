@@ -7,15 +7,17 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import de.unikoeln.idh.prasunweb.model.Footnote;
+import de.unikoeln.idh.prasunweb.model.Book;
 
 @Repository
-public interface FootnoteRepository extends PagingAndSortingRepository<Footnote, Integer> {
+public interface BookRepository extends PagingAndSortingRepository<Book, Integer> {
 
-    public List<Footnote> findAll();
+    public List<Book> findAll();
 
-    public Page<Footnote> findAll(Pageable pageable);
+    public Page<Book> findAll(Pageable pageable);
 
-    public Footnote findOneById(Integer footnoteId);
+    public Book findOneById(Integer bookId);
+
+    public Book findOneByTitleEndingWith(String year);
 
 }

@@ -5,12 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,8 +22,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
-@Table(name = "sentences")
-public class Sentence implements Serializable {
+@Table(name = "books")
+public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,19 +31,27 @@ public class Sentence implements Serializable {
     @GeneratedValue
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn
-    private Section section;
+    private String author;
 
-    @OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL)
-    private List<Footnote> footnotes = new ArrayList<Footnote>();
+    private String introduction;
 
-    @Column(columnDefinition = "TEXT")
-    private String content;
+    private String glossary;
 
-    public Sentence addFootnote(Footnote... footnotes) {
-        for (Footnote footnote : footnotes) {
-            this.footnotes.add(footnote.setSentence(this));
+    private String title;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<Section> sections = new ArrayList<Section>();
+
+    public Book(String author, String introduction, String glossary, String title) {
+        this.author = author;
+        this.introduction = introduction;
+        this.glossary = glossary;
+        this.title = title;
+    }
+
+    public Book addSections(Section... sections) {
+        for (Section section : sections) {
+            this.sections.add(section.setBook(this));
         }
 
         return this;

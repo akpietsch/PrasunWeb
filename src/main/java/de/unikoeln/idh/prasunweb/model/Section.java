@@ -30,36 +30,35 @@ import lombok.experimental.Accessors;
 @Table(name = "sections")
 public class Section implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
-	@Id
-	@GeneratedValue
-	private Integer id;
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(nullable = false)
-	private Work work;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = false)
+    private Book book;
 
-	// ISO 639-3 Language Code "prn" "deu"
-	private String locale;
+    // ISO 639-3 Language Code ("prn"/"deu")
+    private String locale;
 
-	@ManyToMany()
-	@JoinTable()
-	private List<Section> sections = new ArrayList<Section>();
+    @ManyToMany()
+    @JoinTable()
+    private List<Section> sections = new ArrayList<Section>();
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private Sentence title;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Sentence title;
 
-	@OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
-	private List<Sentence> sentences = new ArrayList<Sentence>();
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
+    private List<Sentence> sentences = new ArrayList<Sentence>();
 
-	// Spread Operator
-	public Section addSentences(Sentence... sentences) {
-		for (Sentence sentence : sentences) {
-			this.sentences.add(sentence.setSection(this));
-		}
+    public Section addSentences(Sentence... sentences) {
+        for (Sentence sentence : sentences) {
+            this.sentences.add(sentence.setSection(this));
+        }
 
-		return this;
-	}
+        return this;
+    }
 
 }

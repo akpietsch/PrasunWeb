@@ -9,18 +9,16 @@ import de.unikoeln.idh.prasunweb.model.Footnote;
 
 public interface FootnoteService {
 
-	public Long count();
+    public List<Footnote> getAll();
 
-	public Footnote save(Footnote footnote);
+    public Page<Footnote> getAll(Pageable pageable);
 
-	public Footnote getOneById(Integer footnoteId);
+    public Footnote getOneById(Integer footnoteId);
 
-	public List<Footnote> getAll();
+    public Footnote save(Footnote footnote);
 
-	public Page<Footnote> getAll(Pageable pageable);
+    public Long count();
 
-	default public Boolean existsById(Integer footnoteId) {
-		return (footnoteId != null && getOneById(footnoteId) != null);
-	}
+    public Boolean existsById(Integer footnoteId);
 
 }

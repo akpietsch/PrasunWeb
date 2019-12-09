@@ -1,0 +1,26 @@
+<th:block th:fragment="section(item, sentences)">
+	<h1 th:insert=":: sentence(item=${item.getTitle()})" />
+	<table>
+		<tr th:each="sentence : ${sentences.getContent()}">
+			<td th:insert=":: sentence(item=${sentence})" />
+		</tr>
+	</table>
+</th:block>
+
+<th:block th:fragment="sentence(item)">
+	<th:block
+		th:if="${item.getFootnotes().isEmpty()}"
+		th:text="${item.getContent()}" />
+	<th:block
+		th:unless="${item.getFootnotes().isEmpty()}"
+		th:each="c, i : ${item.getContent().toCharArray()}"><!-- 
+	    --><th:block th:text="${c}" /><!--
+	    --><span
+			th:each="footnote : ${item.getFootnotes()}"
+			th:if="${i.index + 1 == footnote.getPostition()}"
+			th:text="${'*'}"
+			th:title="${footnote.getContent()}" /><!--  
+	 --></th:block>
+</th:block>
+
+

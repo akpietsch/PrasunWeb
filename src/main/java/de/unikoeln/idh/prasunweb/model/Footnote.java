@@ -24,19 +24,19 @@ import lombok.experimental.Accessors;
 @Table(name = "footnotes")
 public class Footnote implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue
-	private Integer id;
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-	@ManyToOne
-	@JoinColumn(nullable = false)
-	private Sentence sentence;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Sentence sentence;
 
-	@Column(columnDefinition = "TEXT")
-	private String content;
+    @Column(columnDefinition = "TEXT")
+    private String content;
 
-	private int postition;
+    private int postition;
 
 }

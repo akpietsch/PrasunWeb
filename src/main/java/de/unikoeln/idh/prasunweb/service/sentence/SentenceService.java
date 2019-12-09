@@ -5,18 +5,21 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import de.unikoeln.idh.prasunweb.model.Section;
 import de.unikoeln.idh.prasunweb.model.Sentence;
 
 public interface SentenceService {
 
-	public Long count();
+    public List<Sentence> getAll();
 
-	public Sentence save(Sentence sentence);
+    public Page<Sentence> getAll(Pageable pageable);
 
-	public Sentence getOneById(Integer sentenceId);
+    public Page<Sentence> getAllBySection(Pageable pageable, Section section);
 
-	public List<Sentence> getAll();
+    public Sentence getOneById(Integer sentenceId);
 
-	public Page<Sentence> getAll(Pageable pageable);
+    public Sentence save(Sentence sentence);
+
+    public Long count();
 
 }
