@@ -1,4 +1,4 @@
-package de.unikoeln.idh.prasunweb.lucene;
+
 //package de.unikoeln.idh.prasunweb.lucene;
 //
 //import java.awt.TextField;

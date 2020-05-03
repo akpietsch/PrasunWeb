@@ -1,4 +1,4 @@
-package marschalling;
+package de.unikoeln.idh.prasunweb.marshalling;
 
 import java.io.IOException;
 

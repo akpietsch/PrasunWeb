@@ -14,6 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,6 +28,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
+@Indexed
 @Table(name = "sentences")
 public class Sentence implements Serializable {
 
@@ -41,6 +45,7 @@ public class Sentence implements Serializable {
     @OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL)
     private List<Footnote> footnotes = new ArrayList<Footnote>();
 
+    @Field
     @Column(columnDefinition = "TEXT")
     private String content;
 

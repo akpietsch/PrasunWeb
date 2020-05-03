@@ -16,6 +16,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,6 +30,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
+@Indexed
 @Table(name = "sections")
 public class Section implements Serializable {
 
@@ -40,7 +44,7 @@ public class Section implements Serializable {
     @JoinColumn(nullable = false)
     private Book book;
 
-    // ISO 639-3 Language Code ("prn"/"deu")
+    @Field// ISO 639-3 Language Code ("prn"/"deu")
     private String locale;
 
     @ManyToMany()

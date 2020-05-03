@@ -1,4 +1,4 @@
-package lucene;
+package de.unikoeln.idh.prasunweb.lucene;
 
 import java.util.List;
 

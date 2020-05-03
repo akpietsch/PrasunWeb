@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,39 +25,41 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
+@Indexed
 @Table(name = "books")
 public class Book implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue
-    private Integer id;
+	@Id
+	@GeneratedValue
+	private Integer id;
 
-    private String author;
+	private String author;
 
-    private String introduction;
+	private String introduction;
 
-    private String glossary;
+	private String glossary;
 
-    private String title;
+	@Field
+	private String title;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private List<Section> sections = new ArrayList<Section>();
+	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+	private List<Section> sections = new ArrayList<Section>();
 
-    public Book(String author, String introduction, String glossary, String title) {
-        this.author = author;
-        this.introduction = introduction;
-        this.glossary = glossary;
-        this.title = title;
-    }
+	public Book(String author, String introduction, String glossary, String title) {
+		this.author = author;
+		this.introduction = introduction;
+		this.glossary = glossary;
+		this.title = title;
+	}
 
-    public Book addSections(Section... sections) {
-        for (Section section : sections) {
-            this.sections.add(section.setBook(this));
-        }
+	public Book addSections(Section... sections) {
+		for (Section section : sections) {
+			this.sections.add(section.setBook(this));
+		}
 
-        return this;
-    }
+		return this;
+	}
 
 }

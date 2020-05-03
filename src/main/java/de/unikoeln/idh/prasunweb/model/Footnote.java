@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +24,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
+@Indexed
 @Table(name = "footnotes")
 public class Footnote implements Serializable {
 
@@ -35,6 +39,7 @@ public class Footnote implements Serializable {
     private Sentence sentence;
 
     @Column(columnDefinition = "TEXT")
+    @Field
     private String content;
 
     private int postition;
