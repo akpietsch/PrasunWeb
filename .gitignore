@@ -1,7 +1,8 @@
 /.mvn/
 /bin/
 /target/
-
+/data/
+/de/
 ### STS ###
 .apt_generated
 .classpath
