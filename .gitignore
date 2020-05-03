@@ -3,6 +3,8 @@
 /target/
 /data/
 /de/
+/src/main/resources/wip/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -12,16 +14,7 @@
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
 
-### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+*.db
+*.docx
+src/main/resources/templates/test.html

@@ -1,0 +1,7 @@
+<th:block th:fragment="search(item, sentences)">
+    <table>
+        <tr th:each="sentence : ${sentences.getContent()}">
+            <td th:insert=":: sentence(item=${sentence})" />
+        </tr>
+    </table>
+</th:block>

@@ -1,0 +1,4 @@
+<div th:insert="fragments/searches :: search(item=${section}, sentences=${sectionSentences})" />
+<div th:insert="fragments/sections :: section(item=${partner}, sentences=${partnerSentences})" />
+
+<div th:insert="fragments/pagination :: pagination(page=${sectionSentences})" />
