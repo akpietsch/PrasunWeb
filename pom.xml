@@ -78,11 +78,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- JACKSON -->
+        <!-- JACKSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-		</dependency>
+			</dependency>
 	</dependencies>
 
 	<build>

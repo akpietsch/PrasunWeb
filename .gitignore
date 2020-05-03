@@ -18,3 +18,5 @@
 *.db
 *.docx
 src/main/resources/templates/test.html
+
+*.lock

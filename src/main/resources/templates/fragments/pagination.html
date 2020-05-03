@@ -1,6 +1,6 @@
 <th:block
 	th:fragment="pagination(page)"
-	th:if="page.getTotalPages() > 1">
+	th:if="${page.getTotalPages() > 1}">
 	<nav>
 		<ul class="pagination">
 			<li th:if="${page.hasPrevious()}"><a

@@ -44,7 +44,8 @@ public class Section implements Serializable {
     @JoinColumn(nullable = false)
     private Book book;
 
-    @Field// ISO 639-3 Language Code ("prn"/"deu")
+    // ISO 639-3 Language Code ("prn"/"deu")
+    @Field
     private String locale;
 
     @ManyToMany()
@@ -53,7 +54,6 @@ public class Section implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Sentence title;
-
     @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
     private List<Sentence> sentences = new ArrayList<Sentence>();
 
@@ -64,5 +64,6 @@ public class Section implements Serializable {
 
         return this;
     }
+
 
 }

@@ -52,7 +52,13 @@ public class DocumentImporter {
     private final String stop = "^\n$";
 
     @EventListener(ApplicationReadyEvent.class)
-    public void executeImporter() {
+    public void autoRun() {
+        if (!this.books.existsByYear("1956") && !this.books.existsByYear("1970")) {
+            this.executeImporter();
+        }
+    }
+
+    private void executeImporter() {
         boolean parse = this.env.getProperty("prasunweb.data.parse", Boolean.class);
         File source = new File(env.getProperty("prasunweb.data.source"));
 

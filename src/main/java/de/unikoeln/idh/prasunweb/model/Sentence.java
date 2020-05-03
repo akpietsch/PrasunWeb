@@ -44,7 +44,7 @@ public class Sentence implements Serializable {
 
     @OneToMany(mappedBy = "sentence", cascade = CascadeType.ALL)
     private List<Footnote> footnotes = new ArrayList<Footnote>();
-
+    
     @Field
     @Column(columnDefinition = "TEXT")
     private String content;
